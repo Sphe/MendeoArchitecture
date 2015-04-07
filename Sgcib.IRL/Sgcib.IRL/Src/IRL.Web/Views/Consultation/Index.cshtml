@@ -1,0 +1,80 @@
+﻿@using IRL.Dtos
+
+@model ConsultationMainDto
+
+@{
+    ViewBag.Title = "Consultation Index";
+}
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/irl/irl.consultation.js"></script>
+    <script type="text/javascript" src="~/Scripts/irl.querybuilder/irl.querybuilder.js"></script>
+}
+
+<div id="consultation-tabs">
+    <ul>
+        <li><a href="#tab-builder">Construction requête</a></li>
+        <li><a href="#tab-result">Résultats</a></li>
+    </ul>
+
+    <div id="tab-builder">
+        <div class="row-fluid">
+            <div class="span12">
+                <a class="btn btnCheckAll" href="#"><i class="icon-ok"></i> Cocher tous</a>
+                <a class="btn btnRemoveAll" href="#"><i class="icon-remove"></i> Décocher</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row-fluid">
+            <div class="span6 lstCbMetadata">
+                @foreach (var employeeMetada in Model.EmployeeMetadata)
+                {
+                    <label class="checkbox"><input class="@string.Concat("cb", employeeMetada)" data-name="@employeeMetada" type="checkbox" /> @employeeMetada</label>
+                }
+            </div>
+            <div class="span6">
+                <ul class="lstSelectedMetadata">
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <a class="btn btnQueryBuilderAddExpression" href="#"><i class="icon-search"></i> Ajout expression</a>
+                <a class="btn btnQueryBuilderAddAnd" href="#"><i class="icon-ok-sign"></i> Ajout AND</a>
+                <a class="btn btnQueryBuilderAddOr" href="#"><i class="icon-ok-sign"></i> Ajout OR</a>
+                <a class="btn btnQueryBuilderVisualize" href="#"><i class="icon-refresh"></i> Calculer filtre</a>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                <ol class="sortable">
+	            </ol>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                <textarea class="txtRenderFilterQuery" rows="5" cols="20"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-result">
+        <div class="row-fluid">
+            <div class="span12">
+                <a class="btn btnExpertToExcel" href="#"><i class="icon-ok"></i> Export Excel</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="containerConsultationGrid">
+        </div>
+    </div>
+</div>

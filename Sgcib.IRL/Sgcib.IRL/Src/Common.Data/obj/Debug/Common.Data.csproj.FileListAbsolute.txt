@@ -1,0 +1,11 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\Common.Data.dll.config
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\Common.Data.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\Common.Data.pdb
+C:\_Dev\Sgcib.IRL\Src\Common.Data\obj\Debug\Common.Data.csprojResolveAssemblyReference.cache
+C:\_Dev\Sgcib.IRL\Src\Common.Data\obj\Debug\Common.Data.dll
+C:\_Dev\Sgcib.IRL\Src\Common.Data\obj\Debug\Common.Data.pdb
+C:\_Dev\Sgcib.IRL\Src\Common.Data\bin\Debug\Common.Data.dll.config
+C:\_Dev\Sgcib.IRL\Src\Common.Data\bin\Debug\Common.Data.dll
+C:\_Dev\Sgcib.IRL\Src\Common.Data\bin\Debug\Common.Data.pdb
+C:\_Dev\Sgcib.IRL\Src\Common.Data\bin\Debug\EntityFramework.dll
+C:\_Dev\Sgcib.IRL\Src\Common.Data\bin\Debug\EntityFramework.xml

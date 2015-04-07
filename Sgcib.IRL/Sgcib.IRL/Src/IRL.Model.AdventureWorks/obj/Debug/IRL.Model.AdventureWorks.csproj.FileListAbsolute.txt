@@ -1,0 +1,6 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Model.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Model.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.AdventureWorks\obj\Debug\IRL.Model.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.AdventureWorks\obj\Debug\IRL.Model.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.AdventureWorks\bin\Debug\IRL.Model.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.AdventureWorks\bin\Debug\IRL.Model.AdventureWorks.pdb

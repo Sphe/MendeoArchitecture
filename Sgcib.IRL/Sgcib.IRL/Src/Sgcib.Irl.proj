@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+
+	<PropertyGroup>
+        <Root_Dir>.</Root_Dir>
+		<Src_Dir>$(MSBuildProjectDirectory)</Src_Dir>
+		<Common_TestRunner_Enabled>True</Common_TestRunner_Enabled>
+    </PropertyGroup>
+	
+	<Import Project="$(Root_Dir)\Common-project.proj" />
+		
+	<ItemGroup>
+        <AllBuildProjectReferences Include="IRL.Data.AdventureWorks/IRL.Data.AdventureWorks.proj" />
+		<AllBuildProjectReferences Include="IRL.Data.Repositories.AdventureWorks/IRL.Data.Repositories.AdventureWorks.proj" />
+		<AllBuildProjectReferences Include="IRL.Model.AdventureWorks/IRL.Model.AdventureWorks.proj" />
+		
+		<AllBuildProjectReferences Include="IRL.Model.Security/IRL.Model.Security.proj" />
+		<AllBuildProjectReferences Include="IRL.Data.Repositories.Security/IRL.Data.Repositories.Security.proj" />
+		<AllBuildProjectReferences Include="IRL.Data.Security/IRL.Data.Security.proj" />
+		
+		<AllBuildProjectReferences Include="IRL.Services/IRL.Services.proj" />
+		
+		<AllBuildProjectReferences Include="IRL.Dtos/IRL.Dtos.proj" />
+		<AllBuildProjectReferences Include="IRL.Controllers/IRL.Controllers.proj" />
+		<AllBuildProjectReferences Include="IRL.Mvc/IRL.Mvc.proj" />
+		<AllBuildProjectReferences Include="IRL.Web/IRL.Web.proj" />
+    </ItemGroup>
+	
+	<Target Name="DeepClean" DependsOnTargets="Common-DeepClean">
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Common-Build">
+	</Target>
+	
+	<Target Name="Generate-AssemblyInfo" DependsOnTargets="Common-AssemblyInfo">
+	</Target>
+</Project>

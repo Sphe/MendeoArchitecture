@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IrlSecurityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="IrlSecurityModelStoreContainer">
+          <EntitySet Name="Role" EntityType="IrlSecurityModel.Store.Role" store:Type="Tables" Schema="Secu" />
+          <EntitySet Name="User" EntityType="IrlSecurityModel.Store.User" store:Type="Tables" Schema="Secu" />
+          <EntitySet Name="UserRole" EntityType="IrlSecurityModel.Store.UserRole" store:Type="Tables" Schema="Secu" />
+          <EntitySet Name="WebSiteAccessPermission" EntityType="IrlSecurityModel.Store.WebSiteAccessPermission" store:Type="Tables" Schema="Secu" />
+          <AssociationSet Name="FK_UserRole_Role_Id" Association="IrlSecurityModel.Store.FK_UserRole_Role_Id">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User_Id" Association="IrlSecurityModel.Store.FK_UserRole_User_Id">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebSiteAccessPermission_Role_Id" Association="IrlSecurityModel.Store.FK_WebSiteAccessPermission_Role_Id">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="WebSiteAccessPermission" EntitySet="WebSiteAccessPermission" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ADName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebSiteAccessPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Controller" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Action" Type="nvarchar" MaxLength="128" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Comments" Type="ntext" />
+        </EntityType>
+        <Association Name="FK_UserRole_Role_Id">
+          <End Role="Role" Type="IrlSecurityModel.Store.Role" Multiplicity="1" />
+          <End Role="UserRole" Type="IrlSecurityModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User_Id">
+          <End Role="User" Type="IrlSecurityModel.Store.User" Multiplicity="1" />
+          <End Role="UserRole" Type="IrlSecurityModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebSiteAccessPermission_Role_Id">
+          <End Role="Role" Type="IrlSecurityModel.Store.Role" Multiplicity="1" />
+          <End Role="WebSiteAccessPermission" Type="IrlSecurityModel.Store.WebSiteAccessPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebSiteAccessPermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IrlSecurityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="IrlSecurityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Role" EntityType="IrlSecurityModel.Role" />
+          <EntitySet Name="User" EntityType="IrlSecurityModel.User" />
+          <EntitySet Name="UserRole" EntityType="IrlSecurityModel.UserRole" />
+          <EntitySet Name="WebSiteAccessPermission" EntityType="IrlSecurityModel.WebSiteAccessPermission" />
+          <AssociationSet Name="FK_UserRole_Role_Id" Association="IrlSecurityModel.FK_UserRole_Role_Id">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebSiteAccessPermission_Role_Id" Association="IrlSecurityModel.FK_WebSiteAccessPermission_Role_Id">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="WebSiteAccessPermission" EntitySet="WebSiteAccessPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User_Id" Association="IrlSecurityModel.FK_UserRole_User_Id">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserRole" Relationship="IrlSecurityModel.FK_UserRole_Role_Id" FromRole="Role" ToRole="UserRole" />
+          <NavigationProperty Name="WebSiteAccessPermission" Relationship="IrlSecurityModel.FK_WebSiteAccessPermission_Role_Id" FromRole="Role" ToRole="WebSiteAccessPermission" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ADName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserRole" Relationship="IrlSecurityModel.FK_UserRole_User_Id" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="IrlSecurityModel.FK_UserRole_Role_Id" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="IrlSecurityModel.FK_UserRole_User_Id" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <EntityType Name="WebSiteAccessPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Role" Relationship="IrlSecurityModel.FK_WebSiteAccessPermission_Role_Id" FromRole="WebSiteAccessPermission" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_UserRole_Role_Id">
+          <End Role="Role" Type="IrlSecurityModel.Role" Multiplicity="1" />
+          <End Role="UserRole" Type="IrlSecurityModel.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebSiteAccessPermission_Role_Id">
+          <End Role="Role" Type="IrlSecurityModel.Role" Multiplicity="1" />
+          <End Role="WebSiteAccessPermission" Type="IrlSecurityModel.WebSiteAccessPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebSiteAccessPermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User_Id">
+          <End Role="User" Type="IrlSecurityModel.User" Multiplicity="1" />
+          <End Role="UserRole" Type="IrlSecurityModel.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IrlSecurityModelStoreContainer" CdmEntityContainer="IrlSecurityEntities">
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="IrlSecurityModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="IrlSecurityModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ADName" ColumnName="ADName" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="IrlSecurityModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebSiteAccessPermission">
+            <EntityTypeMapping TypeName="IrlSecurityModel.WebSiteAccessPermission">
+              <MappingFragment StoreEntitySet="WebSiteAccessPermission">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="IrlSecurity">
+        <EntityTypeShape EntityType="IrlSecurityModel.Role" Width="1.5" PointX="0.75" PointY="3.75" Height="1.7879850260416661" IsExpanded="true" />
+        <EntityTypeShape EntityType="IrlSecurityModel.User" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="IrlSecurityModel.UserRole" Width="1.5" PointX="3" PointY="2.625" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="IrlSecurityModel.WebSiteAccessPermission" Width="1.5" PointX="3" PointY="6.25" Height="2.3648893229166656" IsExpanded="true" />
+        <AssociationConnector Association="IrlSecurityModel.FK_UserRole_Role_Id" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.1776432291666659" />
+          <ConnectorPoint PointX="3" PointY="4.1776432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="IrlSecurityModel.FK_WebSiteAccessPermission_Role_Id" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="5.5379850260416656" />
+          <ConnectorPoint PointX="1.5" PointY="7.4324446614583328" />
+          <ConnectorPoint PointX="3" PointY="7.4324446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="IrlSecurityModel.FK_UserRole_User_Id" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="3.75" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="3.75" PointY="2.625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

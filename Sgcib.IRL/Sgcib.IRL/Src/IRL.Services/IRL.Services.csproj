@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDACF195-86D6-4F2D-A9EC-66B2723F53AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IRL.Services</RootNamespace>
+    <AssemblyName>IRL.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationService.cs" />
+    <Compile Include="Contracts\IAuthorizationService.cs" />
+    <Compile Include="Contracts\IEmployeeService.cs" />
+    <Compile Include="Contracts\IRoleService.cs" />
+    <Compile Include="Contracts\IUserRoleService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Contracts\IWebsitePermissionService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="UserRoleService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="WebsitePermissionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Core\Common.Core.csproj">
+      <Project>{2E8C4824-69BE-4376-99FC-9772896C9318}</Project>
+      <Name>Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Data\Common.Data.csproj">
+      <Project>{3946BB5C-7C14-458A-97B0-87FAFFC74FF8}</Project>
+      <Name>Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Data.AdventureWorks\IRL.Data.AdventureWorks.csproj">
+      <Project>{200858A3-E862-4486-8F8F-A571AC5ACF5F}</Project>
+      <Name>IRL.Data.AdventureWorks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Data.Repositories.AdventureWorks\IRL.Data.Repositories.AdventureWorks.csproj">
+      <Project>{7028B7A3-4448-484B-BFBA-67C11DFB107C}</Project>
+      <Name>IRL.Data.Repositories.AdventureWorks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Data.Repositories.Security\IRL.Data.Repositories.Security.csproj">
+      <Project>{85A7889E-0682-48AB-BE95-7FF9F8596E8B}</Project>
+      <Name>IRL.Data.Repositories.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Data.Security\IRL.Data.Security.csproj">
+      <Project>{7AAC77C8-212A-4C92-B856-EAB74D68FB71}</Project>
+      <Name>IRL.Data.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Model.AdventureWorks\IRL.Model.AdventureWorks.csproj">
+      <Project>{2AAA67ED-9ACA-478E-8FE3-7213571FC070}</Project>
+      <Name>IRL.Model.AdventureWorks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Model.Security\IRL.Model.Security.csproj">
+      <Project>{C9A7BF45-9805-418D-9BD8-F131C2C4EF76}</Project>
+      <Name>IRL.Model.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

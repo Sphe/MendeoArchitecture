@@ -1,0 +1,6 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.Repositories.Security.dll.config
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.Repositories.Security.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.Repositories.Security.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.Repositories.Security\obj\Release\IRL.Data.Repositories.Security.csprojResolveAssemblyReference.cache
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.Repositories.Security\obj\Release\IRL.Data.Repositories.Security.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.Repositories.Security\obj\Release\IRL.Data.Repositories.Security.pdb

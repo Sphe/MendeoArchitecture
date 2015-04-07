@@ -1,0 +1,186 @@
+﻿body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.container-narrow > hr {
+    margin: 10px 0 10px 0;
+}
+
+/* Customize the navbar links to be fill the entire space of the .navbar */
+.navbar .navbar-inner {
+    padding: 0;
+}
+
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,.75);
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+div.upnavbar 
+{
+    height: 50px;
+}
+
+div.logobox
+{
+    height: 50px;
+}
+
+span.logo 
+{
+    text-align: left;
+    padding-left: 280px;
+    padding-bottom: 35px;
+    font-size: 24.5px;
+    font-weight: bolder;
+    line-height: 40px;
+    text-decoration: none;
+    color: #000000;
+}
+
+span.logo 
+{
+    background: url(/content/sgcib/logo-en.png) no-repeat left top;
+}
+
+div.user
+{
+    text-align: right;
+    height: 50px;
+    line-height: 50px;
+}
+
+.clear 
+{
+    clear: both;
+}
+
+/***********************/
+/* Consultation Screen */
+/***********************/
+
+.ui-placeholder
+{
+	outline: 1px dashed #4183C4;
+	/*-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: -1px;*/
+}
+
+.irl-querybuilder-error {
+	background: #fbe3e4;
+	border-color: transparent;
+}
+
+ol.sortable, ol.sortable ol {
+	margin: 0 0 0 25px;
+	padding: 0;
+	list-style-type: none;
+}
+
+ol.sortable {
+	margin: 2em 0;
+}
+
+.sortable li {
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+.sortable li div  {
+	border: 1px solid #d4d4d4;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+	padding: 6px;
+	margin: 0;
+	cursor: move;
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+}
+
+.sortable select 
+{
+    margin-bottom: 0px;
+}
+
+.txtRenderFilterQuery
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/***********************/
+/* Admin Screen */
+/***********************/
+
+.validation-summary-errors
+{
+    font-weight: bolder;
+    color: Red;
+    margin-bottom: 10px;
+}
+
+/***********************/
+/* TDB Screen */
+/***********************/
+
+input.ui-spinner-input {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+.input-append .ui-spinner .ui-spinner-button.ui-spinner-up {
+  -webkit-border-top-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+.input-append .ui-spinner .ui-spinner-button.ui-spinner-down {
+  -webkit-border-bottom-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.tbTDBNumMonth 
+{
+    width: 40px;
+}

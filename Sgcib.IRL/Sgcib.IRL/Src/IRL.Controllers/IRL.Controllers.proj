@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+
+	<PropertyGroup>
+        <Root_Dir>..</Root_Dir>
+    </PropertyGroup>
+	<Import Project="$(Root_Dir)\Common-project.proj" />
+		
+	<Target Name="Init" DependsOnTargets="Common-Init">
+		
+		<PropertyGroup>
+			<Assembly_is-cls-compliant>true</Assembly_is-cls-compliant>
+			<Assembly_version>1.0.0.0</Assembly_version>
+			<Assembly_description>IRL Controllers</Assembly_description>
+		</PropertyGroup>
+
+	</Target>
+
+	<Target Name="SetLocalProperties">
+		<CreateProperty Value="$(MSBuildProjectDirectory)">
+			<Output TaskParameter="Value" PropertyName="Src_Dir"/>
+		</CreateProperty>
+		<CreateProperty Value="$(MSBuildProjectName)">
+			<Output TaskParameter="Value" PropertyName="AssemblyOutputName"/>
+		</CreateProperty>
+		<CreateProperty Value="IRL.Controllers.csproj">
+			<Output TaskParameter="Value" PropertyName="Csproj_File"/>
+		</CreateProperty>		
+	</Target>
+	
+	<Target Name="SetAssemblyProperties">
+		<CreateProperty Value="IRL.Controllers">
+			<Output TaskParameter="Value" PropertyName="AssemblyTitle"/>
+		</CreateProperty>
+		<CreateProperty Value="IRL Controllers">
+			<Output TaskParameter="Value" PropertyName="AssemblyDescription"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="SetLocalProperties;SetAssemblyProperties;Generate-AssemblyInfo;Common-Compile-Msbuild-Dll;ZipOutPut">
+	</Target>
+	
+	<Target Name="DeepClean" DependsOnTargets="SetLocalProperties;Common-Clean-CsProj">
+	</Target>
+	
+	<Target Name="Generate-AssemblyInfo" DependsOnTargets="Init;Common-AssemblyInfo">
+	</Target>
+</Project>

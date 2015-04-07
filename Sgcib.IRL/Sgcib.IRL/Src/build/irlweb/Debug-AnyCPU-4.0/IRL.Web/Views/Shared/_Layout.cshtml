@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - IRL Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        @Styles.Render("~/Content/toastr/css")
+        @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+        ) 
+        @Scripts.Render("~/bundles/modernizr")
+        @RenderSection("head", required: false)
+    </head>
+    <body>
+        <div class="container-narrow">
+
+            <div class="masthead">
+                <div class="row-fluid upnavbar">
+                    <div class="span8 logobox">
+                        <a href="@Url.Action("Index", "Home")">
+                            <span class="logo">IRL Application</span>
+                        </a>
+                    </div>
+                    <div class="span4 user"><span><b>@User.Identity.Name</b></span></div>
+                </div>
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <ul class="nav">
+                                @Html.MenuLink("Home", "Index", "Home")
+                                @Html.MenuLink("Importation", "Index", "Importation")
+                                @Html.MenuLink("Consultation", "Index", "Consultation")
+                                @Html.MenuLink("TDB", "Index", "TDB")
+                                @Html.MenuLink("KPI", "Index", "KPI")
+                                @Html.MenuLink("About", "About", "Home")
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.navbar -->
+            </div>
+
+            <hr />
+
+            @RenderBody()
+        </div> <!-- /container -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/toastr")
+        @Scripts.Render("~/bundles/irl")
+        @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.HtmlEditor },
+            new Script { ExtensionSuite = ExtensionSuite.GridView },
+            new Script { ExtensionSuite = ExtensionSuite.Editors }
+        )
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

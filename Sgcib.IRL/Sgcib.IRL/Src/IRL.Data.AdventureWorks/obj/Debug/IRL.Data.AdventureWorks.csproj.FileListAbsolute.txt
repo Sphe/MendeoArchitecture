@@ -1,0 +1,17 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.AdventureWorks.dll.config
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Data.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\obj\Debug\IRL.Data.AdventureWorks.csprojResolveAssemblyReference.cache
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\obj\Debug\IRL.Data.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\obj\Debug\IRL.Data.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\IRL.Data.AdventureWorks.dll.config
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\IRL.Data.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\IRL.Data.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\Common.Core.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\Common.Data.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\EntityFramework.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\IRL.Model.AdventureWorks.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\Common.Core.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\Common.Data.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\IRL.Model.AdventureWorks.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Data.AdventureWorks\bin\Debug\EntityFramework.xml

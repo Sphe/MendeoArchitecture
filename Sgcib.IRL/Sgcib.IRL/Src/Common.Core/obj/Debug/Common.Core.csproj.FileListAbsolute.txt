@@ -1,0 +1,7 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\Common.Core.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\Common.Core.pdb
+C:\_Dev\Sgcib.IRL\Src\Common.Core\obj\Debug\Common.Core.csprojResolveAssemblyReference.cache
+C:\_Dev\Sgcib.IRL\Src\Common.Core\obj\Debug\Common.Core.dll
+C:\_Dev\Sgcib.IRL\Src\Common.Core\obj\Debug\Common.Core.pdb
+C:\_Dev\Sgcib.IRL\Src\Common.Core\bin\Debug\Common.Core.dll
+C:\_Dev\Sgcib.IRL\Src\Common.Core\bin\Debug\Common.Core.pdb

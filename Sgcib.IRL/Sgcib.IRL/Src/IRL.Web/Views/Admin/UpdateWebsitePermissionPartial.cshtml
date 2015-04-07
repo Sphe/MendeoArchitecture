@@ -1,0 +1,67 @@
+﻿@model IRL.Dtos.WebSiteAccessPermissionDto
+
+@using (Html.BeginForm("UpdateWebsitePermissionProcess", "Admin", FormMethod.Post, new { id = "frmUpdateWebsitePermission" }))
+{   
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="row-fluid">
+        <div class="span12">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            Role
+        </div>
+        <div class="span6">
+            @Html.DropDownListFor(x => x.RoleId, Model.RoleList.Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            Controller
+        </div>
+        <div class="span6">
+            @Html.DropDownListFor(x => x.Controller, Model.ControllerList.Select(x => new SelectListItem() { Text = x, Value = x }), new { @class = "cbControllerSelector" })
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            Action
+        </div>
+        <div class="span6">
+            @Html.DropDownListFor(x => x.Action, new SelectList(Enumerable.Empty<string>()), new { @class = "cbActionResultSelector" })
+            <div class="cbActionResultValue" style="display: none;">@Model.Action</div>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            Enabled
+        </div>
+        <div class="span6">
+            @Html.CheckBoxFor(x => x.Enabled)
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            Comments
+        </div>
+        <div class="span6">
+            @Html.TextAreaFor(x => x.Comments)
+        </div>
+    </div>  
+    
+    <div class="row-fluid">
+        <div class="span6">
+            <a id="btnUpdateWebsitePermissionFormSubmit" class="btn" href="#"><i class="icon-ok"></i> Envoyer</a>
+        </div>
+        <div class="span6">
+            <a id="btnUpdateWebsitePermissionFormCancel" class="btn" href="#"><i class="icon-remove"></i> Annuler</a>
+        </div>
+    </div> 
+}

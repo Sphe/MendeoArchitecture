@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+	<Import Project="Common-project.proj" />
+	
+	<PropertyGroup>
+        <Root_Dir>$(MSBuildStartupDirectory)</Root_Dir>
+    </PropertyGroup>
+	
+	<ItemGroup>
+        <ProjectReferencesIrlWeb Include="Sgcib.Common.proj" />
+		<ProjectReferencesIrlWeb Include="Sgcib.Irl.proj" />
+    </ItemGroup>
+	
+	<Target Name="CreateBuildDirectory">
+		<MakeDir Directories="$(Build_Dir)" />
+	</Target>
+	
+	<Target Name="DeleteBuildDirectory">
+		<RemoveDir Directories="$(Build_Dir)" />
+	</Target>
+	
+	<Target Name="Init">
+		<CallTarget Targets="Common-Init"/>
+		<CallTarget Targets="CreateBuildDirectory"/>
+	</Target>
+	
+	<Target Name="ChangeBuildDir">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="ChangeBuildDirToIrlWeb">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)\irlweb">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<!-- Entry point for building SGCIB.Irl Projects -->
+	
+	<Target Name="Clean" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+	</Target>
+		
+	<Target Name="CleanIrlWeb" DependsOnTargets="CommonSystemInformation;ChangeBuildDirToIrlWeb;Common-Init;DeleteBuildDirectory">
+	</Target>
+	
+	<Target Name="DeepClean" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+		<MSBuild
+            Projects="@(ProjectReferencesIrlWeb)"
+            Targets="DeepClean">
+        </MSBuild>
+	</Target>
+	
+	<Target Name="BuildIrlWeb" DependsOnTargets="Clean;CommonSystemInformation;ChangeBuildDirToIrlWeb;Init;Common-Copy-References">		
+		<MSBuild
+            Projects="@(ProjectReferencesIrlWeb)"
+			Properties="Build_Dir=$(Build_Dir);Build_Type=$(Build_Type);Platform=$(Platform)"
+            Targets="Build">
+            <Output
+                TaskParameter="TargetOutputs"
+                ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+	</Target>
+</Project>

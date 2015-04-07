@@ -1,0 +1,6 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Model.Security.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Model.Security.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.Security\obj\Debug\IRL.Model.Security.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.Security\obj\Debug\IRL.Model.Security.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.Security\bin\Debug\IRL.Model.Security.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Model.Security\bin\Debug\IRL.Model.Security.pdb

@@ -1,0 +1,5 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Mvc.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Mvc.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Mvc\obj\Release\IRL.Mvc.csprojResolveAssemblyReference.cache
+C:\_Dev\Sgcib.IRL\Src\IRL.Mvc\obj\Release\IRL.Mvc.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Mvc\obj\Release\IRL.Mvc.pdb

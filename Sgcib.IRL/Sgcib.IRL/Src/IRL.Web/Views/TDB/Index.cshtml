@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "TDB Index";
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/irl/irl.tdb.js"></script>
+}
+
+<div class="row-fluid">
+    <div class="span12">
+        <a class="btn" href="#"><i class="icon-plus-sign"></i> Calculate</a>
+        <a class="btn" href="#"><i class="icon-pencil"></i> Formulas</a>
+        <a class="btn" href="#"><i class="icon-remove-sign"></i> Excel</a>
+    </div>
+</div>
+
+<br />
+
+<div class="row-fluid">
+    <div class="span3">
+        Week to calculate    
+    </div>
+    <div class="span3">
+        <input type="text" />
+    </div>
+    <div class="span3">
+        Last file of friday evening
+    </div>
+    <div class="span3">
+        <input type="text" />
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span3">
+        1st of January  
+    </div>
+    <div class="span9">
+        <input class="tbDataPicker" type="text" />
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span3">
+        Monday (S)    
+    </div>
+    <div class="span3">
+        <input class="tbDataPicker" type="text" />
+    </div>
+    <div class="span3">
+        Friday (S)
+    </div>
+    <div class="span3">
+        <input class="tbDataPicker" type="text" />
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span3">
+        Monday (S-1)   
+    </div>
+    <div class="span3">
+        <input class="tbDataPicker" type="text" />
+    </div>
+    <div class="span3">
+        Friday (S-1)
+    </div>
+    <div class="span3">
+        <input class="tbDataPicker" type="text" />
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span4">
+        Number of files and interests amount not chased
+    </div>
+    <div class="span4">
+        <div>
+            <input type="radio" name="radNumFiles" /> Month                       
+        </div>
+        <div>
+            <input type="radio" name="radNumFiles" /> Days
+        </div>
+    </div>
+    <div class="span4">
+        <input class="tbSpinner tbTDBNumMonth" type="text" /> Month
+    </div>
+</div>

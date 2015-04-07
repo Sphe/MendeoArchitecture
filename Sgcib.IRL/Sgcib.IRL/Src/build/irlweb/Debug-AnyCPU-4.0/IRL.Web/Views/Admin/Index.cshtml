@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Admin Index";
+}
+
+@section head
+{
+    <link href="~/Content/DataTables-1.9.4/media/css/demo_table_jui.css" rel="stylesheet" />
+    <link href="~/Content/simplemodal/basic.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/jquery.form/jquery.form.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.fnReloadAjax.js"></script>
+    <script type="text/javascript" src="~/Scripts/DataTables.Editable/jquery.dataTables.editable.js"></script>
+    <script type="text/javascript" src="~/Scripts/simplemodal/jquery.simplemodal.js"></script>
+    <script type="text/javascript" src="~/Scripts/irl/irl.admin.js"></script>
+}
+
+<div id="admin-tabs">
+    <ul>
+        <li><a href="#tab-user">User</a></li>
+        <li><a href="#tab-role">Role</a></li>
+        <li><a href="#tab-userinrole">User in Role</a></li>
+        <li><a href="#tab-websitepermission">Website Permission</a></li>
+    </ul>
+
+    <div id="tab-user">
+        <div class="row-fluid">
+            <div class="span12">
+                <a id="btnAddUser" class="btn" href="#"><i class="icon-plus-sign"></i> Ajouter</a>
+                <a id="btnEditUser" class="btn" href="#"><i class="icon-pencil"></i> Editer</a>
+                <a id="btnRemoveUser" class="btn" href="#"><i class="icon-remove-sign"></i> Supprimer</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" id="dtUser" class="display">
+	                <thead>
+		                <tr>
+			                <th>Id</th>
+                            <th width="50%">AD Name</th>
+			                <th width="50%">Display Name</th>
+		                </tr>
+	                </thead>
+                    <tbody>
+	                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-role">
+        <div class="row-fluid">
+            <div class="span12">
+                <a id="btnAddRole" class="btn" href="#"><i class="icon-plus-sign"></i> Ajouter</a>
+                <a id="btnEditRole" class="btn" href="#"><i class="icon-pencil"></i> Editer</a>
+                <a id="btnRemoveRole" class="btn" href="#"><i class="icon-remove-sign"></i> Supprimer</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" id="dtRole" class="display">
+	                <thead>
+		                <tr>
+                            <th>Id</th>
+			                <th>Name</th>
+		                </tr>
+	                </thead>
+                    <tbody>
+	                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-userinrole">
+        <div class="row-fluid">
+            <div class="span12">
+                <a id="btnAddUserRole" class="btn" href="#"><i class="icon-plus-sign"></i> Ajouter</a>
+                <a id="btnEditUserRole" class="btn" href="#"><i class="icon-pencil"></i> Editer</a>
+                <a id="btnRemoveUserRole" class="btn" href="#"><i class="icon-remove-sign"></i> Supprimer</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" id="dtUserRole" class="display">
+	                <thead>
+		                <tr>
+                            <th>Id</th>
+			                <th width="50%">User</th>
+                            <th width="50%">Role</th>
+		                </tr>
+	                </thead>
+                    <tbody>
+	                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-websitepermission">
+        <div class="row-fluid">
+            <div class="span12">
+                <a id="btnAddWebsitePermission" class="btn" href="#"><i class="icon-plus-sign"></i> Ajouter</a>
+                <a id="btnEditWebsitePermission" class="btn" href="#"><i class="icon-pencil"></i> Editer</a>
+                <a id="btnRemoveWebsitePermission" class="btn" href="#"><i class="icon-remove-sign"></i> Supprimer</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" id="dtWebsitePermission" class="display">
+	                <thead>
+		                <tr>
+                            <th>Id</th>
+			                <th>Role</th>
+                            <th>Controller</th>
+                            <th>Action</th>
+                            <th>Enabled</th>
+                            <th width="50">Comments</th>
+		                </tr>
+	                </thead>
+                    <tbody>
+	                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

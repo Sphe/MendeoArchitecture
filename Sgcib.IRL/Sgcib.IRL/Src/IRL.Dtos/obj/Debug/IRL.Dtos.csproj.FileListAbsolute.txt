@@ -1,0 +1,6 @@
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Dtos.dll
+C:\_Dev\Sgcib.IRL\Src\build\irlweb\IRL.Dtos.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Dtos\obj\Debug\IRL.Dtos.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Dtos\obj\Debug\IRL.Dtos.pdb
+C:\_Dev\Sgcib.IRL\Src\IRL.Dtos\bin\Debug\IRL.Dtos.dll
+C:\_Dev\Sgcib.IRL\Src\IRL.Dtos\bin\Debug\IRL.Dtos.pdb

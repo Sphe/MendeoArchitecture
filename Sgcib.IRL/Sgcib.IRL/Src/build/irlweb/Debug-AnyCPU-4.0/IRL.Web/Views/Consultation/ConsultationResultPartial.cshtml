@@ -1,0 +1,38 @@
+﻿@model IRL.Dtos.ConsultationResultMainDto
+
+@{
+    var lstCol = new System.Collections.Generic.List<MVCxGridViewColumn>();
+    foreach (var col in Model.EmployeeMetadata)
+    {
+        var column = new MVCxGridViewColumn(col, MVCxGridViewColumnType.Default);
+        lstCol.Add(column);
+    }
+
+    var routeValueDico = new RouteValueDictionary();
+    routeValueDico.Add("Controller", "Consultation");
+    routeValueDico.Add("Action", "ConsultationResultPartial");
+    routeValueDico.Add("metadataToShow", Model.EmployeeMetadata);
+    routeValueDico.Add("filterString", Model.FilterString);
+    routeValueDico.Add("filterArgumentValues", Model.FilterArgumentValues);
+    routeValueDico.Add("filterArgumentDataTypes", Model.FilterArgumentDataTypes);
+}
+
+@Html.DevExpress().GridView(
+    settings =>
+    {
+        
+        settings.Name = "gvConsultationResultMain";
+        settings.CallbackRouteValues = routeValueDico.FixListRouteDataValues();
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+        settings.Columns.AddRange(lstCol.ToArray());
+
+        settings.Settings.ShowGroupPanel = true;
+        
+        settings.SettingsPager.PageSize = 10;
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.ShowAllItem = true;
+        
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+        
+    }).Bind(Model.EmployeeList).GetHtml()

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+	<Import Project="Common.proj" />
+		
+	<PropertyGroup>
+        <CommonTestRunnerEnabled>True</CommonTestRunnerEnabled>
+	</PropertyGroup>
+	
+	<Target Name="Common-Copy-References">
+		<ItemGroup>
+			<ReferencesFilesCopy Include="$(Lib_Dir)\**\*.dll" /> 
+		</ItemGroup>
+		
+		<Copy SourceFiles="@(ReferencesFilesCopy)" DestinationFolder="$(Build_Dir)"></Copy>
+	</Target>
+	
+	<Target Name="Common-Build">
+		<MSBuild
+            Projects="@(AllBuildProjectReferences)"
+            Targets="Build">
+            <Output
+                TaskParameter="TargetOutputs"
+                ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+	</Target>
+	
+	<Target Name="Common-DeepClean">
+		<MSBuild
+            Projects="@(AllBuildProjectReferences)"
+            Targets="DeepClean">
+        </MSBuild>
+	</Target>
+	
+	<!--
+	<Target Name="Common-AssemblyInfo" DependsOnTargets="PopulateSvnVersion">
+		<MakeDir Directories="$(Src_Dir)\Properties" Condition="!Exists('$(Src_Dir)\Properties')"/>
+		<AssemblyInfo CodeLanguage="CS"  
+			OutputFile="$(Src_Dir)\Properties\AssemblyInfo.cs" 
+			AssemblyTitle="$(AssemblyTitle)" 
+			AssemblyDescription="$(AssemblyDescription)"
+			AssemblyConfiguration="$(AssemblyConfiguration)"
+			AssemblyCompany="$(AssemblyCompany)"
+			AssemblyProduct="$(AssemblyProduct)"
+			AssemblyCopyright="Copyright (c) SGCIB, 2013"
+			AssemblyTrademark=""
+			ComVisible="false"
+			CLSCompliant="false"
+			AssemblyVersion="$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber)" 
+			AssemblyFileVersion="$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber)" 
+		/>
+	</Target>
+	-->
+	<Target Name="Common-AssemblyInfo" DependsOnTargets="">
+		<MakeDir Directories="$(Src_Dir)\Properties" Condition="!Exists('$(Src_Dir)\Properties')"/>
+		<AssemblyInfo CodeLanguage="CS"  
+			OutputFile="$(Src_Dir)\Properties\AssemblyInfo.cs" 
+			AssemblyTitle="$(AssemblyTitle)" 
+			AssemblyDescription="$(AssemblyDescription)"
+			AssemblyConfiguration="$(AssemblyConfiguration)"
+			AssemblyCompany="$(AssemblyCompany)"
+			AssemblyProduct="$(AssemblyProduct)"
+			AssemblyCopyright="Copyright (c) SGCIB, 2013"
+			AssemblyTrademark=""
+			ComVisible="false"
+			CLSCompliant="false"
+			AssemblyVersion="$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber)" 
+			AssemblyFileVersion="$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber)" 
+		/>
+	</Target>
+	
+	<Target Name="Common-Compile-Csc-Dll">
+        <CSC
+			AdditionalLibPaths="$(Build_Dir)"
+            Sources = "@(ProjectSources)"
+			References = "@(Project_References)"
+			TargetType="library"
+            OutputAssembly = "$(Build_Dir)\$(AssemblyOutputName).dll">
+        </CSC>
+	</Target>
+	
+	<Target Name="Common-Compile-Msbuild-Dll">
+        <MSBuild
+			Projects="$(Csproj_File)"
+			Properties="Configuration=$(Build_Type);Platform=$(Platform);OutputPath=$(Build_Dir)"
+			ToolsVersion="$(ToolsVersion)">
+			<Output 
+				TaskParameter="TargetOutputs"
+				ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+		
+		<MakeDir Directories="$(Build_Project_Dir)" Condition="!Exists('$(Build_Project_Dir)')"/>
+		<Copy SourceFiles="@(AssembliesBuiltByChildProjects)" DestinationFolder="$(Build_Project_Dir)"></Copy>
+	</Target>
+	
+	<Target Name="Common-Compile-AspCompile" DependsOnTargets="Show-WebSite-Information">
+		<RemoveDir Directories="$(Build_Project_Dir)\$(AssemblyOutputName)" Condition="Exists('$(Build_Project_Dir)\$(AssemblyOutputName)')"/>
+		<MakeDir Directories="$(Build_Project_Dir)\$(AssemblyOutputName)"/>
+		
+		<ItemGroup>  
+			<WebSiteFiles Include="$(Build_Dir)\_PublishedWebsites\$(AssemblyOutputName)\**\*" Exclude="$(Build_Dir)\_PublishedWebsites\$(AssemblyOutputName)\bin\*.pdb;$(Build_Dir)\_PublishedWebsites\$(AssemblyOutputName)\bin\*.xml" />
+		</ItemGroup> 
+		
+		<Copy SourceFiles="@(WebSiteFiles)" DestinationFiles="@(WebSiteFiles->'$(Build_Project_Dir)\$(AssemblyOutputName)\%(RecursiveDir)%(Filename)%(Extension)')"></Copy>
+	</Target>
+	
+	<Target Name="ZipOutPut">
+		<MakeDir Directories="$(Build_Project_Dir)\deploy" Condition="!Exists('$(Build_Project_Dir)\deploy')"/>
+		<Zip Files="@(AssembliesBuiltByChildProjects)" WorkingDirectory="$(Build_Project_Dir)" ZipFileName="$(Build_Project_Dir)\deploy\$(AssemblyOutputName)-$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber).zip" />
+	</Target>
+	
+	<Target Name="CopyToDeploy">
+		<MakeDir Directories="$(Build_Project_Dir)\deploy" Condition="!Exists('$(Build_Project_Dir)\deploy')"/>
+		<Copy SourceFiles="@(AssembliesBuiltByChildProjects)" DestinationFolder="$(Build_Project_Dir)\deploy" />
+	</Target>
+	
+	<Target Name="ZipOutPutListFiles">
+		<MakeDir Directories="$(Build_Project_Dir)\deploy" Condition="!Exists('$(Build_Project_Dir)\deploy')"/>
+		<Zip Files="@(ListFileToZip)" WorkingDirectory="$(Build_Dir)" ZipFileName="$(Build_Project_Dir)\deploy\$(AssemblyOutputName)-$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber).zip" />
+	</Target>
+	
+	<Target Name="ZipOutPutWebSite">
+		<MakeDir Directories="$(Build_Project_Dir)\deploy" Condition="!Exists('$(Build_Project_Dir)\deploy')"/>
+		<Zip Files="@(WebSiteFiles)" WorkingDirectory="$(Build_Dir)\_PublishedWebsites\$(AssemblyOutputName)" ZipFileName="$(Build_Project_Dir)\deploy\$(AssemblyOutputName)-$(VersionMajor).$(VersionMinor).$(SvnRevisionNumber).$(VersionBuildNumber).zip" />
+	</Target>
+	
+	<Target Name="Common-Clean-CsProj">
+        <MSBuild
+			Projects="$(Csproj_File)"
+			Targets="Clean"
+			ToolsVersion="$(ToolsVersion)">
+        </MSBuild>
+	</Target>
+	
+</Project>
