@@ -1,0 +1,17 @@
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\AutoMapper.Net4.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\App.Config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\quartz.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\quartz_jobs.xml
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Console.exe.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Console.exe
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Console.pdb
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Console\obj\Release\Mendeo.Scheduler.Console.csprojResolveAssemblyReference.cache
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Console\obj\Release\Mendeo.Scheduler.Console.exe
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Console\obj\Release\Mendeo.Scheduler.Console.pdb
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\AutoMapper.Net4.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\App.Config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\quartz.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\quartz_jobs.xml
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Console.exe.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Console.exe
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Console.pdb

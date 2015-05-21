@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Alphacloud.Common.ServiceLocator.Castle</name>
+    </assembly>
+    <members>
+        <member name="T:Alphacloud.Common.ServiceLocator.Castle.MicroKernelServiceLocatorAdapter">
+            <summary>
+              CommonServiceLocator adapter for Castle MicroKernel
+            </summary>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.MicroKernelServiceLocatorAdapter.#ctor(Castle.MicroKernel.IKernel)">
+            <summary>
+              Initializes a new instance of the <see cref="T:Alphacloud.Common.ServiceLocator.Castle.MicroKernelServiceLocatorAdapter"/> class.
+            </summary>
+            <param name="kernel">The kernel.</param>
+            <exception cref="T:System.ArgumentNullException">kernel</exception>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.MicroKernelServiceLocatorAdapter.DoGetInstance(System.Type,System.String)">
+            <summary>
+              When implemented by inheriting classes, this method will do the actual work of resolving
+              the requested service instance.
+            </summary>
+            <param name="serviceType">Type of instance requested.</param>
+            <param name="key">Name of registered service you want. May be null.</param>
+            <returns>
+              The requested service instance.
+            </returns>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.MicroKernelServiceLocatorAdapter.DoGetAllInstances(System.Type)">
+            <summary>
+              When implemented by inheriting classes, this method will do the actual work of
+              resolving all the requested service instances.
+            </summary>
+            <param name="serviceType">Type of service requested.</param>
+            <returns>
+              Sequence of service instance objects.
+            </returns>
+        </member>
+        <member name="T:Alphacloud.Common.ServiceLocator.Castle.WindsorServiceLocatorAdapter">
+            <summary>
+              CommonServiceLocator adapter for Castle Windsor
+            </summary>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.WindsorServiceLocatorAdapter.#ctor(Castle.Windsor.IWindsorContainer)">
+            <summary>
+              Initializes a new instance of the <see cref="T:Alphacloud.Common.ServiceLocator.Castle.WindsorServiceLocatorAdapter"/> class.
+            </summary>
+            <param name="container">The container.</param>
+            <exception cref="T:System.ArgumentNullException">container</exception>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.WindsorServiceLocatorAdapter.DoGetInstance(System.Type,System.String)">
+            <summary>
+              When implemented by inheriting classes, this method will do the actual work of resolving
+              the requested service instance.
+            </summary>
+            <param name="serviceType">Type of instance requested.</param>
+            <param name="key">Name of registered service you want. May be null.</param>
+            <returns>
+              The requested service instance.
+            </returns>
+        </member>
+        <member name="M:Alphacloud.Common.ServiceLocator.Castle.WindsorServiceLocatorAdapter.DoGetAllInstances(System.Type)">
+            <summary>
+              When implemented by inheriting classes, this method will do the actual work of
+              resolving all the requested service instances.
+            </summary>
+            <param name="serviceType">Type of service requested.</param>
+            <returns>
+              Sequence of service instance objects.
+            </returns>
+        </member>
+    </members>
+</doc>

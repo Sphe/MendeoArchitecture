@@ -1,0 +1,13 @@
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\AutoMapper.Net4.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\App.Config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Config.dll.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Config.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\Mendeo.Scheduler.Config.pdb
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Config\obj\Release\Mendeo.Scheduler.Config.csprojResolveAssemblyReference.cache
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Config\obj\Release\Mendeo.Scheduler.Config.dll
+D:\_Alex\GitHub\Mercurius\Src\Mendeo.Scheduler.Config\obj\Release\Mendeo.Scheduler.Config.pdb
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\AutoMapper.Net4.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\App.Config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Config.dll.config
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Config.dll
+D:\_Alex\GitHub\Mercurius\Src\build\mercuriusscheduler\applicationconsole\Mendeo.Scheduler.Config.pdb
