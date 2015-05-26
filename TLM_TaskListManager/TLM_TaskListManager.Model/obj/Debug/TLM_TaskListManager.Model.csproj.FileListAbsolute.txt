@@ -1,0 +1,9 @@
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\TLM_TaskListManager.Model.dll.config
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\TLM_TaskListManager.Model.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\TLM_TaskListManager.Model.pdb
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\EntityFramework.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\EntityFramework.xml
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\obj\Debug\TLM_TaskListManager.Model.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Model\obj\Debug\TLM_TaskListManager.Model.pdb

@@ -1,0 +1,4 @@
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Service\bin\Debug\TLM_TaskListManager.Service.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Service\bin\Debug\TLM_TaskListManager.Service.pdb
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Service\obj\Debug\TLM_TaskListManager.Service.dll
+D:\Albiona\LookOut\TLM_TaskListManager\TLM_TaskListManager.Service\obj\Debug\TLM_TaskListManager.Service.pdb

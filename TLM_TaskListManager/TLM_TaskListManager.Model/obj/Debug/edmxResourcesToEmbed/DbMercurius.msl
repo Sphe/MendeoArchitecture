@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MercuriusModelStoreContainer" CdmEntityContainer="MercuriusEntities">
+    <EntitySetMapping Name="AddressType">
+      <EntityTypeMapping TypeName="MercuriusModel.AddressType">
+        <MappingFragment StoreEntitySet="AddressType">
+          <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageType">
+      <EntityTypeMapping TypeName="MercuriusModel.ImageType">
+        <MappingFragment StoreEntitySet="ImageType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImageTypeID" ColumnName="ImageTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
