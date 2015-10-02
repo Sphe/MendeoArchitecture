@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+
+	<PropertyGroup>
+        <Root_Dir>..</Root_Dir>
+    </PropertyGroup>
+	<Import Project="$(Root_Dir)\Common-project.proj" />
+		
+	<Target Name="Init" DependsOnTargets="Common-Init">
+		
+	</Target>
+
+	<Target Name="SetLocalProperties">
+		<CreateProperty Value="$(MSBuildProjectDirectory)">
+			<Output TaskParameter="Value" PropertyName="Src_Dir"/>
+		</CreateProperty>
+		<CreateProperty Value="$(MSBuildProjectName)">
+			<Output TaskParameter="Value" PropertyName="AssemblyOutputName"/>
+		</CreateProperty>
+		<CreateProperty Value="Mendeo.Mercurius.AdminWeb.csproj">
+			<Output TaskParameter="Value" PropertyName="Csproj_File"/>
+		</CreateProperty>		
+	</Target>
+	
+	<Target Name="SetAssemblyProperties">
+		<CreateProperty Value="Mendeo.Mercurius.AdminWeb">
+			<Output TaskParameter="Value" PropertyName="AssemblyTitle"/>
+		</CreateProperty>
+		<CreateProperty Value="Mendeo">
+			<Output TaskParameter="Value" PropertyName="AssemblyDescription"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="SetLocalProperties;SetAssemblyProperties;Generate-AssemblyInfo;Common-Compile-Msbuild-Dll;Common-Compile-AspCompile;ZipOutPutWebSite">
+	</Target>
+	
+	<Target Name="DeepClean" DependsOnTargets="SetLocalProperties;Common-Clean-CsProj">
+	</Target>
+	
+	<Target Name="Generate-AssemblyInfo" DependsOnTargets="Init;Common-AssemblyInfo">
+	</Target>
+</Project>

@@ -1,0 +1,183 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Product Edit</h1>
+</div>
+<div class="wrapper-md">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <carousel interval="3000">
+                <slide ng-repeat="img in productHomeImages">
+                    <img ng-src="{{prefixProductImageUrl + img.image.thumbUrl}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">General Information</div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        
+                        <!--<div class="form-group">
+                                <label class="col-sm-3 control-label">Select:</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-static">
+                                        <a editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">
+                                            {{ showStatus(user) }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>-->
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Id:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    {{productId}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Name:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="name">{{ name || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Status:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="name">{{ productLastStatusID || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Price:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="price">{{ price || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Short Description:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="oneLineDescription">{{ oneLineDescription || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Description:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-textarea="description" e-rows="7">
+                                        {{ description || 'no description' }}
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Adress (Google):</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="adressOneLine">{{ adressOneLine || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Country (Google):</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="country">{{ country || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Latitude (Google):</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="latitude">{{ latitude || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Longitude (Google):</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-text="longitude">{{ longitude || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Is Pro:</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">
+                                    <a editable-checkbox="isPro" e-title="Is Pro ?">
+                                        {{ isPro && "Pro" || "Perso" }}
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--<div class="form-group">
+                                <label class="col-sm-3 control-label">Radiolist:</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-static">
+                                        <a editable-radiolist="user.agenda" e-ng-options="s.value as s.text for s in agenda">
+                                            {{ showAgenda() }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-sm btn-info" click-and-disable="changeToNotifyApproval()" ng-show="showBtnNotifyApproval">Change Status to Notify_Approval</button>
+            <span ng-show="approvalSubmitted">Approved : the user will be notified by email.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-sm btn-info" ng-click="changeToPermanent()">Change Status to Permanent</button>
+            <span ng-show="permanentSubmitted">Permanent.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-sm btn-danger" ng-click="changeToRejectedDeleted()" ng-show="showBtnDelete">Change Status to Delete</button>
+            <span ng-show="deletedSubmitted">Deleted.</span>
+        </div>
+    </div>
+
+</div>
