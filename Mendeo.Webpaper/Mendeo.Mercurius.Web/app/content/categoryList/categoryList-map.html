@@ -1,0 +1,85 @@
+﻿<div class="col-md-9">
+    <div class="b-sort-panel">
+        <div class="b-select b-left">
+            <ui-select ng-model="vm.numProductSelect"
+                       theme="bootstrap"
+                       search-enabled="false"
+                       style="width: 300px;">
+                <ui-select-match placeholder="Nombre d'annonce à afficher ...">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="choice in vm.productToShowChoices">
+                    <div ng-bind-html="choice.label"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="b-select b-left">
+            <ui-select ng-model="vm.sortProductSelect"
+                       theme="bootstrap"
+                       search-enabled="false"
+                       style="width: 300px;">
+                <ui-select-match placeholder="Trier les annonces ...">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="choice in vm.productToSortChoices">
+                    <div ng-bind-html="choice.label"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="b-view-switcher f-view-switcher b-right">
+            <div ng-click="vm.setToRow()" class="b-view-switcher_column fa fa-th-list"></div>
+            <div ng-click="vm.setToGrid()" class="b-view-switcher_table fa fa-th"></div>
+            <div ng-click="vm.setToMap()" class="b-view-switcher_column is-view-switcher__item-active fa fa-map-marker"></div>
+        </div>
+    </div>
+    <div class="row">
+        <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)" pagination-id="prodmap"></dir-pagination-controls>
+
+        <div class="b-col-default-indent">
+
+            <ui-gmap-google-map class="b-google-map__map-view" center="vm.map.center" zoom="vm.map.zoom" draggable="true" options="vm.mapsOptions" events="vm.mapsEvents" bounds="vm.map.bounds">
+                <ui-gmap-markers models="vm.randomMarkers" coords="'self'" icon="'icon'" click="onClick">
+                    <ui-gmap-windows show="show">
+                        <div class="b-google-map__info-window-template"
+                             data-selected-marker="4"
+                             data-width="292"
+                             style="height:300px">
+                            <div class="b-google-map__info-window col-xs-12 b-goggle-map_info-window-estate">
+                                <div class="b-goggle-map_info-window-estate-image">
+                                    <img data-retina src="{{ productImageUrl }}" alt="" ng-non-bindable />
+                                </div>
+                                <div class="f-google-map__info-window-estate-title clearfix">
+                                    <div class="pull-left f-primary" ng-non-bindable>{{product.productName}}</div>
+                                    <div class="pull-right f-primary-b" ng-non-bindable ng-show="product.productCultureMap[0].baseUnitPrice != 0">{{product.productCultureMap[0].baseUnitPrice}}</div>
+                                </div>
+                                <div class="b-google-map__info-window-estate-details clearfix">
+                                    <div class="b-right f-selection f-primary f-size-default">
+                                        23 reviews
+                                    </div>
+                                    <div class="b-stars-group f-stars-group">
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star is-active-stars"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="f-primary f-google-map__info-window-estate-description" ng-non-bindable>
+                                    {{product.productCultureMap[0].shortDescription}}
+                                    <br />
+                                    <a class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b" href="{{ '/view/' + product.productCode }}" ng-non-bindable>Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ui-gmap-windows>
+                </ui-gmap-markers>
+            </ui-gmap-google-map>
+
+            <div class="clearfix hidden-xs"></div>
+            <div class="clearfix visible-xs-block"></div>
+        </div>
+
+        <div dir-paginate="prod in vm.productBag.contextProducts | itemsPerPage: vm.numProductSelect.id" total-items="vm.productBag.total" pagination-id="prodmap"></div>
+
+        <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)" pagination-id="prodmap"></dir-pagination-controls>
+
+    </div>
+</div>

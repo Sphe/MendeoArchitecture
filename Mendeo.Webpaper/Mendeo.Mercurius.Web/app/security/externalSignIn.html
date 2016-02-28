@@ -1,0 +1,12 @@
+﻿<section id="externalSignIn" class="view" ng-controller="externalSignInController as vm">
+    <h2>{{::vm.title}}</h2>
+    <ul class="list-unstyled">
+        <li ng-repeat="ap in vm.authProviders" class="inline">
+            <button type="submit" class="btn social clickable" ng-click="vm.login(ap.url)">
+                <img src="/Content/img/security/social/social-icon_google.png" alt="Google" ng-show="ap.name == 'Google'" />
+                <img src="/Content/img/security/social/social-icon_fb.png" alt="Facebook" ng-show="ap.name == 'Facebook'" />
+                <img src="/Content/img/security/social/social-icon_twitter.png" alt="Twitter" ng-show="ap.name == 'Twitter'" />
+            </button>
+        </li>
+    </ul>     
+</section>

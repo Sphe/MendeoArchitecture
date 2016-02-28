@@ -1,0 +1,137 @@
+﻿<section class="b-infoblock">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <aside>
+                    <div class="row b-col-default-indent">
+                        <div class="col-md-12">
+                            <div class="b-categories-filter">
+                                <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Informations</h4>
+                                <ul>
+                                    <li>
+                                        <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Nombre de vues</a>
+                                        <span class="b-categories-filter_count f-categories-filter_count">{{ vm.productDetail.viewCount }}</span>
+                                    </li>
+                                    <li>
+                                        <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Création</a>
+                                        <span class="b-categories-filter_count f-categories-filter_count">{{ vm.productDateCreated }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12" ng-show="vm.productPopular">
+                            <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Produits vedette</h4>
+                            <div class="b-blog-short-post b-blog-short-post--popular b-blog-short-post--w-img b-blog-short-post--img-hover-bordered f-blog-short-post--w-img row f-blog-short-post--popular">
+                                <div ng-repeat="popularProduct in vm.productPopular">
+                                    <div class="b-blog-short-post__item col-md-12 col-sm-6 col-xs-12">
+                                        <div class="b-blog-short-post__item_img">
+                                            <a href="view/{{ popularProduct.productCode }}"><img data-retina ng-src="{{popularProduct.productImageMap | retrieveViewLinkImage}}" alt="" /></a>
+                                        </div>
+                                        <div class="b-remaining">
+                                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                                <a href="view/{{ popularProduct.productCode }}">{{popularProduct.productCultureMap[0].productName}}</a>
+                                            </div>
+                                            <div class="f-blog-short-post__item_price  f-primary-b" ng-if="popularProduct.productCultureMap[0].baseUnitPrice != 0">
+                                                {{popularProduct.productCultureMap[0].baseUnitPrice}}
+                                            </div>
+                                            <span class="b-blog-short-post__item_text f-blog-short-post__item_text" ng-if="popularProduct.productCultureMap[0].baseUnitPrice == 0">
+                                                {{popularProduct.googleAddressInLine}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-9 ">
+                <div class="b-shortcode-example">
+                    <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{{vm.productDetail.productCultureMap[0].productName}}</div>
+                    <div class="b-product-card b-default-top-indent">
+                        <div pv-rs-slider></div>
+                        <div class="b-product-card__info">
+                            <h4 class="f-primary-b b-h4-special f-h4-special">
+                                Fiche Annonce
+                                <!--<pre>{{vm.productDetail.isUserFavorite}}</pre>-->
+                                <md-button aria-label="Ajouter aux favoris" ng-click="vm.addProductFavorite(vm.productDetail.isUserFavorite)" ng-show="vm.productDetail.isUserFavorite != null">
+                                    <md-icon md-svg-src="/Content/img/mendeo/fav.svg" style="width: 24px; height: 24px;"></md-icon>
+                                    <md-tooltip>
+                                        Ajouter aux favoris
+                                    </md-tooltip>
+                                </md-button>
+                            </h4>
+                            <div class="b-product-card__info_row">
+                                <div class="b-product-card__info_title f-primary-b f-title-smallest" ng-if="vm.productDetail.productCultureMap[0].baseUnitPrice != 0">Prix</div>
+                                <span class="f-product-card__info_price c-default f-primary-b" ng-if="vm.productDetail.productCultureMap[0].baseUnitPrice != 0" >{{vm.productDetail.productCultureMap[0].baseUnitPrice}} {{vm.productDetail.country.currencyLabel}}</span>
+                            </div>
+                            <!--<div class="b-product-card__info_row">
+                                <span class="f-primary-b c-tertiary f-title-smallest">Option payante</span>
+                            </div>-->
+                            <div class="b-product-card__info_row">
+                                <div class="b-product-card__info_description f-product-card__info_description">
+                                    {{vm.productDetail.productCultureMap[0].shortDescription}}
+                                </div>
+                            </div>
+                            <!--<div class="b-product-card__info_row">
+                                <div class="b-product-card__info_like  b-btn f-btn b-btn-sm-md f-btn-sm-md b-btn--icon-only">
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                            </div>-->
+                            <div class="b-product-card__info_row">
+                                <div class="b-product-card__info_title f-primary-b f-title-smallest">Categories</div>
+                                <div ng-repeat="categoryProductMapItem in vm.productDetail.categoryProductMap">
+                                    <a class="f-more f-title-smallest lnkClick" ng-click="vm.goToCategoryList($event, categoryProductMapItem.category.categoryCultureMap[0].categoryID)">{{categoryProductMapItem.category.categoryCultureMap[0].categoryName}}</a>
+                                </div>
+                            </div>
+                            <div class="b-product-card__info_row">
+                                <div class="b-product-card__info_title f-primary-b f-title-smallest">Localit&eacute;</div>
+                                <span>{{vm.oneLineAddress}}</span>
+                                <ui-gmap-google-map class="productview-mapspreview" center='vm.map.center' zoom='vm.map.zoom'>
+                                    <ui-gmap-marker coords="vm.mapMarker.coords" options="vm.mapMarker.options" idkey="vm.mapMarker.id" />
+                                </ui-gmap-google-map>
+                            </div>
+                            <div class="b-product-card__info_row">
+                                <div class="b-btn-group-hor f-btn-group-hor">
+                                    <ul ng-social-buttons
+                                        data-url="vm.socialSharedUrl"
+                                        data-image="vm.productDetail.productImageMap | retrieveFullViewLinkImage"
+                                        showcounts="true">
+                                        <li class="ng-social-facebook">Facebook</li>
+                                        <li class="ng-social-google-plus">Google+</li>
+                                        <li class="ng-social-twitter" data-title="' '">Twitter</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="b-shortcode-example">
+                    <div pv-tab-content></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="b-infoblock">
+    <div class="container">
+        <div class="row">
+            <div ng-show="vm.productRelated">
+                <h4 class="f-primary-b b-h4-special f-h4-special">Annonces similaires</h4>
+                <div class="row">
+                    <section class="b-infoblock b-diagonal-line-bg-light">
+                        <div class="container">
+                            <div class="b-carousel-secondary f-carousel-secondary b-some-examples-tertiary f-some-examples-tertiary b-carousel-reset">
+                                <div bx-slider="related"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

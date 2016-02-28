@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D16B686D-1DCE-4CBE-B464-B8476525520F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mendeo.Scheduler.Config</RootNamespace>
+    <AssemblyName>Mendeo.Scheduler.Config</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alphacloud.Common.ServiceLocator.Castle">
+      <HintPath>..\packages\Alphacloud.Common.ServiceLocator.Castle.1.1.0.0\lib\net40\Alphacloud.Common.ServiceLocator.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.QuartzIntegration">
+      <HintPath>..\packages\Quartz.Windsor.0.3.2\lib\net40\Castle.Facilities.QuartzIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\packages\EasyNetQ.0.47.10.380\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ.DI.Windsor">
+      <HintPath>..\packages\EasyNetQ.DI.Windsor.0.47.10.380\lib\net40\EasyNetQ.DI.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\packages\Elasticsearch.Net.1.3.1\lib\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>..\packages\NEST.1.3.1\lib\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.3.4.3\lib\net35\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MappingRegistrar.cs" />
+    <Compile Include="ComponentRegistrar.cs" />
+    <Compile Include="JobExtensions.cs" />
+    <Compile Include="QuartzConfigurator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindsorExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mendeo.Common.Core\Mendeo.Common.Core.csproj">
+      <Project>{2e8c4824-69be-4376-99fc-9772896c9318}</Project>
+      <Name>Mendeo.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Common.Data\Mendeo.Common.Data.csproj">
+      <Project>{3946bb5c-7c14-458a-97b0-87faffc74ff8}</Project>
+      <Name>Mendeo.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Data.FullDomain\Mendeo.Mercurius.Data.FullDomain.csproj">
+      <Project>{90582bcc-cce2-4879-9f9e-06a5676e3b2f}</Project>
+      <Name>Mendeo.Mercurius.Data.FullDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Data.Repository.FullDomain\Mendeo.Mercurius.Data.Repository.FullDomain.csproj">
+      <Project>{959e3a07-2359-4ef6-bd12-5f9999222a4a}</Project>
+      <Name>Mendeo.Mercurius.Data.Repository.FullDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Dto\Mendeo.Mercurius.Dto.csproj">
+      <Project>{ecad9fb5-7766-4013-980d-63e63eb30a52}</Project>
+      <Name>Mendeo.Mercurius.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Enum\Mendeo.Mercurius.Enum.csproj">
+      <Project>{57daf226-17e5-4829-a46f-7482d75d0fc2}</Project>
+      <Name>Mendeo.Mercurius.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Jobs\Mendeo.Mercurius.Jobs.csproj">
+      <Project>{f50cc391-8ecf-4218-833d-6c1d9634d57e}</Project>
+      <Name>Mendeo.Mercurius.Jobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Model.FullDomain\Mendeo.Mercurius.Model.FullDomain.csproj">
+      <Project>{61d1f0b4-5757-4362-a888-db71756b7791}</Project>
+      <Name>Mendeo.Mercurius.Model.FullDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Service\Mendeo.Mercurius.Service.csproj">
+      <Project>{74012ae2-2330-41fb-b977-ab52168939d3}</Project>
+      <Name>Mendeo.Mercurius.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,83 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Ajout d'une nouvelle caractéristique</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form" role="form" name="attributeTypeForm">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input type="text" name="type" class="form-control" ng-model="newTag.type" required sk-focus-on-set-pristine />
+                    <ng-messages for="attributeTypeForm.type.$error" ng-if="attributeTypeForm.type.$touched" sk-has-error>
+                        <ng-message class="help-block" when="required">requis</ng-message>
+                    </ng-messages>
+                </div>
+                
+                <div class="form-group">
+                    <div class="btn-group" dropdown>
+                        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+                            Primitive ...<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ng-click="newTag.fieldTypeId = 0">String</a></li>
+                            <li><a ng-click="newTag.fieldTypeId = 1">Number</a></li>
+                            <li><a ng-click="newTag.fieldTypeId = 3">Date</a></li>
+                            <li><a ng-click="newTag.fieldTypeId = 2">Boolean</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     ng-show="newTag.fieldTypeId == 0">
+                    <label for="item">Item</label>
+                    <input type="text" name="item" class="form-control" ng-model="newTag.item" required sk-focus-on-set-pristine />
+                    <ng-messages for="attributeTypeForm.item.$error" ng-if="attributeTypeForm.item.$touched" sk-has-error>
+                        <ng-message class="help-block" when="required">requis</ng-message>
+                    </ng-messages>
+                </div>
+                <div class="form-group"
+                     ng-show="newTag.fieldTypeId == 1">
+                    <label for="itemNumber">Item</label>
+                    <input type="text" name="itemNumber" class="form-control" ng-model="newTag.itemNumber" required sk-focus-on-set-pristine />
+                    <ng-messages for="attributeTypeForm.itemNumber.$error" ng-if="attributeTypeForm.itemNumber.$touched" sk-has-error>
+                        <ng-message class="help-block" when="required">requis</ng-message>
+                    </ng-messages>
+                </div>
+                <div class="form-group"
+                     ng-show="newTag.fieldTypeId == 2">
+                    <div class="btn-group">
+                        <label class="btn btn-primary" ng-model="newTag.itemBool" btn-radio="'true'">True</label>
+                        <label class="btn btn-primary" ng-model="newTag.itemBool" btn-radio="'false'">False</label>
+                    </div>
+                </div>
+                <div class="form-group"
+                     ng-show="newTag.fieldTypeId == 3">
+                    <label for="item">Item</label>
+                    <p class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="newTag.itemDate" is-open="opened"
+                               datepicker-options="dateOptions"
+                               ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <ng-messages for="attributeTypeForm.itemDate.$error" ng-if="attributeTypeForm.itemDate.$touched" sk-has-error>
+                        <ng-message class="help-block" when="required">requis</ng-message>
+                    </ng-messages>
+                </div>
+                <div class="form-group"
+                     ng-show="newTag.fieldTypeId == 1">
+                    <label for="item">Unité</label>
+                    <input type="text" name="item" class="form-control" ng-model="newTag.unitLabel" required sk-focus-on-set-pristine />
+                    <ng-messages for="attributeTypeForm.unitLabel.$error" ng-if="attributeTypeForm.unitLabel.$touched" sk-has-error>
+                        <ng-message class="help-block" when="required">requis</ng-message>
+                    </ng-messages>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
+</div>

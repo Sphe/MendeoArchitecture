@@ -1,0 +1,52 @@
+﻿<section class="b-google-map">
+    <div class="f-primary-l f-center b-google-map__title f-google-map__title">Retrouver toutes les <span class="f-primary-b">annonces</span> près de chez vous</div>
+
+    <ui-gmap-google-map class="b-google-map__map-view" center="map.center" zoom="map.zoom" draggable="true" options="options" events="mapsEvents" bounds="map.bounds">
+        <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="onClick">
+            <ui-gmap-windows show="show">
+                <div class="b-google-map__info-window-template"
+                     data-selected-marker="4"
+                     data-width="292"
+                     style="height:300px">
+                    <div class="b-google-map__info-window col-xs-12 b-goggle-map_info-window-estate">
+                        <div class="b-goggle-map_info-window-estate-image">
+                            <img data-retina src="{{ productImageUrl }}" alt="" ng-non-bindable />
+                        </div>
+                        <div class="f-google-map__info-window-estate-title clearfix">
+                            <div class="pull-left f-primary" ng-non-bindable>{{product.productName}}</div>
+                            <div class="pull-right f-primary-b" ng-non-bindable>{{product.productCultureMap[0].baseUnitPrice}}</div>
+                        </div>
+                        <div class="b-google-map__info-window-estate-details clearfix">
+                            <div class="b-right f-selection f-primary f-size-default">
+                                23 reviews
+                            </div>
+                            <div class="b-stars-group f-stars-group">
+                                <i class="fa fa-star is-active-stars"></i>
+                                <i class="fa fa-star is-active-stars"></i>
+                                <i class="fa fa-star is-active-stars"></i>
+                                <i class="fa fa-star is-active-stars"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="f-primary f-google-map__info-window-estate-description" ng-non-bindable>
+                            {{product.productCultureMap[0].shortDescription}}
+                            <br />
+                            <a class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b" href="{{ '/view/' + product.productCode }}" ng-non-bindable>Voir</a>
+                        </div>
+                    </div>
+                </div>
+            </ui-gmap-windows>
+        </ui-gmap-markers>
+    </ui-gmap-google-map>
+
+    <img data-retina src="" data-label="Localisation" class="marker-template hidden" />
+    <div class="b-float-search__container b-float-search__container-without-background">
+        <div class="b-float-search__container-inner b-float-search__container-inner-thick-round-border">
+            <div class="b-float-search__container-inner-row  b-right-inner-addon f-right-inner-addon">
+                <i class="fa fa-map-marker b-left-inner-addon-marker f-left-inner-addon-marker"></i>
+                <i class="fa fa-search b-right-inner-addon-search"></i>
+                <input id="product-one_line_address" class="form-control b-float-search__input" g-places-autocomplete force-selection="true" ng-model="currentPlace" placeholder="Addresse de vente du produit" />
+            </div>
+        </div>
+    </div>
+</section>

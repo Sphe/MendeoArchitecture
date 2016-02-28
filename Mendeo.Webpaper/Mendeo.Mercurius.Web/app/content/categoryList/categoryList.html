@@ -1,0 +1,9 @@
+﻿<div class="container">
+    <div class="f-primary-b b-title-b-hr f-title-b-hr"><span>Parcourir les annonces ({{vm.productBag.total}} annonce(s))</span></div>
+    <div class="spacer10"></div>
+    <div class="row">
+        <ng-include src="'/app/content/common/templates/filterPanelView.html'"></ng-include>
+        <ng-include src="vm.templateUrlForTypeDisplay"></ng-include>
+    </div>
+    <div class="spacer50"></div>
+</div>

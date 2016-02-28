@@ -1,0 +1,50 @@
+﻿<div class="b-tabs f-tabs j-tabs b-tabs-reset">
+    <ul>
+        <li><a href="#tabs-21">Description</a></li>
+        <li><a href="#tabs-22">Attributs</a></li>
+        <li><a href="#tabs-23">Contact</a></li>
+    </ul>
+    <div class="b-tabs__content">
+        <div id="tabs-21">
+            <h4 class="f-tabs-vertical__title f-primary-b">Description de l'annonce</h4>
+            <div ng-bind-html="vm.descriptionHtmlSafe"></div>
+        </div>
+        <div id="tabs-22">
+            <h4 class="f-tabs-vertical__title f-primary-b">Attributs</h4>
+            <div ng-if="vm.productDetail.productAttributeMap.length != 0">
+                <ul ng-repeat="attributeMapItem in vm.productDetail.productAttributeMap">
+                    <li><b>{{attributeMapItem.attribute.attributeType.name}}</b>: {{attributeMapItem.attribute.attributeItem.label}}</li>
+                </ul>
+            </div>
+            <div ng-if="vm.productDetail.productAttributeMap.length == 0">
+                <ul>
+                    <li><b>Aucun attribut définit...</b></li>
+                </ul>
+            </div>
+        </div>
+        <div id="tabs-23">
+            <h4 class="f-tabs-vertical__title f-primary-b">Contact</h4>
+            <div class="row b-shortcode-example">
+                <div class="col-md-12">
+                    <div class="b-tagline-box b-diagonal-line-bg-light b-tagline-box--big f-tagline-center">
+                        <div class="form-group">
+                            <label>Captcha</label>
+                            <div vc-recaptcha
+                                 theme="'light'"
+                                 key="vm.recapchakey"
+                                 on-create="vm.setWidgetId(widgetId)"
+                                 on-success="vm.setResponse(response)"
+                                 class="captchaV2"></div>
+                        </div>
+                        <div class="form-group" >
+                            <button class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b" ng-hide="vm.showUserEmail" ng-click="vm.showEmail()">Show Email</button>
+                            <label ng-show="vm.showUserEmail">{{vm.productDetail.userEmail || '- Email non disponible -'}}</label>
+                            <br/>
+                            <label ng-show="vm.showUserEmail">{{vm.productDetail.userPhone || '- Tel non disponible -'}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61D1F0B4-5757-4362-A888-DB71756B7791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mendeo.Mercurius.Model.FullDomain</RootNamespace>
+    <AssemblyName>Mendeo.Mercurius.Model.FullDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\packages\Elasticsearch.Net.1.3.1\lib\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>..\packages\NEST.1.3.1\lib\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbuseProductReviewMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountMailQueue.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaims.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attribute.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeBehavior.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeCategoryMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeEvent.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeItem.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeSuggest.cs" />
+    <Compile Include="AttributeType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryComponent.cs" />
+    <Compile Include="CategoryComposite.cs" />
+    <Compile Include="CategoryCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryEntity.cs" />
+    <Compile Include="CategoryImageMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryLeaf.cs" />
+    <Compile Include="CategoryProductMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Continent.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Continent1.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CsvDelimiter.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Culture.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomExport.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELMAH_Error.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EncryptionType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityWithValidation.cs" />
+    <Compile Include="Enum\EnumGenerator1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\SellerTypeEnum.cs">
+      <DependentUpon>EnumGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSetting.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSettingType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImageType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndexedAttribute.cs" />
+    <Compile Include="IndexedCoordinate.cs" />
+    <Compile Include="IndexedImage.cs" />
+    <Compile Include="IndexedProduct.cs" />
+    <Compile Include="MailerTemplate.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MailerTemplateType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MercuriusFullDomain.Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Page.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageBehavior.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageEvent.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="People.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleOnline.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleOnlineHistory.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phone.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostalCode.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTemplate.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTemplateType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAnnounceType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAnnounceTypeCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAttributeMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAttributeMap2.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBehavior.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEvent.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductFavorite.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImageMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImageType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMailQueue.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReview.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatus.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusInternalComment.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusInternalCommentMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReason.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonCategory.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonCategoryCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonEntry.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonEntryMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusReasonLink.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatusTypeCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueStatus.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestBucketComposite.cs" />
+    <Compile Include="RequestIndexedProductResponse.cs" />
+    <Compile Include="RequestIndexedProduct.cs" />
+    <Compile Include="RolePermission.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolePermissionMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellerType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellerTypeCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SourceType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserReview.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserReviewMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserReviewType.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserReviewTypeCultureMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoleMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WhishList.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WhishListBehavior.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WhishListEvent.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WhishListProductMap.cs">
+      <DependentUpon>MercuriusFullDomain.Model.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Enum\EnumGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumGenerator1.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="MercuriusFullDomain.Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MercuriusFullDomain.Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mendeo.Mercurius.Enum\Mendeo.Mercurius.Enum.csproj">
+      <Project>{57daf226-17e5-4829-a46f-7482d75d0fc2}</Project>
+      <Name>Mendeo.Mercurius.Enum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

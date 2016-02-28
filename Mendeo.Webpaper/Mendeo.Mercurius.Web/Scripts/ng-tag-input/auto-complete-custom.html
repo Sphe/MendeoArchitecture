@@ -1,0 +1,20 @@
+﻿<div class="autocomplete" ng-show="suggestionListType.visible">
+    <ul class="suggestion-list">
+        <li class="suggestion-item"
+            ng-repeat="item in suggestionListType.items track by trackType(item)"
+            ng-class="{selected: item == suggestionListType.selected}"
+            ng-click="addSuggestionByIndexType($index)"
+            ng-mouseenter="suggestionListType.select($index)"
+            ng-bind-html="highlightType(item)"></li>
+    </ul>
+</div>
+<div class="autocomplete" ng-show="suggestionListItem.visible">
+    <ul class="suggestion-list">
+        <li class="suggestion-item"
+            ng-repeat="item in suggestionListItem.items track by trackItem(item)"
+            ng-class="{selected: item == suggestionListItem.selected}"
+            ng-click="addSuggestionByIndexItem($index)"
+            ng-mouseenter="suggestionListItem.select($index)"
+            ng-bind-html="highlightItem(item)"></li>
+    </ul>
+</div>

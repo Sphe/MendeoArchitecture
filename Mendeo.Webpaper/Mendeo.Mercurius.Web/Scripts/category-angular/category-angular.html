@@ -1,0 +1,50 @@
+﻿<div class="container">
+    <h3 class="f-primary-b f-title-big">Choisissez votre categorie</h3>
+    <p class="f-primary-l"></p>
+    <div class="b-infoblock-with-icon-group row">
+
+        <div class="row">
+            <div class="f-left">
+                <div class="b-breadcrumbs f-breadcrumbs">
+                    <div class="container">
+                        <ul>
+                            <li ng-repeat="cat in breadCrumbList.slice().reverse()">
+                                <a href="#" ng-if="$first" ng-click="clickToCategory(cat)"><i class="fa fa-home"></i>{{cat.label}}</a>
+                                <span ng-if="!$first"><i class="fa fa-angle-right"></i><a href="#" ng-click="clickToCategory(cat)">{{cat.label}}</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="cat in currentCategory.children">
+            <div class="b-infoblock-with-icon">
+                <span class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon" ng-show="cat.children.length == 0">
+                    <i class="" ng-class="cat.iconCssClass"></i>
+                </span>
+                <a href="#" class="b-infoblock-with-icon__icon f-infoblock-with-icon__icon" ng-click="clickToCategory(cat)" ng-show="cat.children.length > 0">
+                    <i class="" ng-class="cat.iconCssClass"></i>
+                </a>
+                <div class="b-infoblock-with-icon__info f-infoblock-with-icon__info">
+                    <span class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb" ng-show="cat.children.length == 0">{{cat.label}}</span>
+                    <a href="#" class="f-infoblock-with-icon__info_title b-infoblock-with-icon__info_title f-primary-sb" ng-click="clickToCategory(cat)" ng-show="cat.children.length > 0">{{cat.label}}</a>
+                    <div class="f-infoblock-with-icon__info_text b-infoblock-with-icon__info_text">
+                        <a href="#" ng-click="goToCategoryList($event, cat.id)">Voir la liste des annonces</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+    </div>
+    <!--<div class="row">
+        <div class="b-default-top-indent">
+            <div class="f-center b-remaining">
+                <div class="b-hr-with-btn">
+                    <a class="b-btn b-btn--load f-btn b-btn-sm f-btn-load f-btn-sm f-primary-b"><i class="fa fa-spinner"></i> Afficher plus</a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>

@@ -1,0 +1,12 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <button class="btn social noclick">
+            <img src="/Content/img/security/social/social-icon_local.png" alt="Local" ng-show="login.loginProvider == 'Local'" />
+            <img src="/Content/img/security/social/social-icon_google.png" alt="Google" ng-show="login.loginProvider == 'Google'" />
+            <img src="/Content/img/security/social/social-icon_fb.png" alt="Facebook" ng-show="login.loginProvider == 'Facebook'" />
+            <img src="/Content/img/security/social/social-icon_twitter.png" alt="Twitter" ng-show="login.loginProvider == 'Twitter'" />
+        </button>
+    </div>
+
+    <div class="col-md-6"><button class="btn btn-sm btn-default" ng-click="action()" ng-show="$parent.vm.userLogins.length > 1">Supprimer</button></div>    
+</div>

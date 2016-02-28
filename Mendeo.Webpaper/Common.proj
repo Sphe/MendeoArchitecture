@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project  
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+	<Import Project="..\Tools\MSBuild.Community.Tasks\MSBuild.Community.Tasks.Targets" />
+	
+	<PropertyGroup>
+		<Root_Dir>$(MSBuildStartupDirectory)</Root_Dir>
+		<Build_Dir>.</Build_Dir>
+		<Src_Dir>.</Src_Dir>
+		
+		<Build_Project_Dir>.</Build_Project_Dir>
+		<Build_Base_Dir>.</Build_Base_Dir>
+		<Build_Family_Dir>build</Build_Family_Dir>
+		<Lib_Dir>.</Lib_Dir>
+		<Lib_Family_Dir>sharedlibs</Lib_Family_Dir>
+		<Lib_Framework_Clr_Dir>false</Lib_Framework_Clr_Dir>		
+		<AssemblyOutputName>Mendeo</AssemblyOutputName>
+		
+		<ToolsVersion>4.0</ToolsVersion>
+		<Csproj_File>.</Csproj_File>
+		<Build_Debug_Dir>debug</Build_Debug_Dir>
+		<Build_Release_Dir>release</Build_Release_Dir>
+		<Build_Type>Debug</Build_Type>
+		<Platform>AnyCPU</Platform>
+		<BuildOptimize>false</BuildOptimize>
+		<BuildUnsafe>false</BuildUnsafe>
+		
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionRevision>0</VersionRevision>
+		<VersionBuildNumber>0</VersionBuildNumber>
+		
+		<SvnRevisionNumber>0</SvnRevisionNumber>
+		
+		<AssemblyTitle></AssemblyTitle>
+		<AssemblyDescription></AssemblyDescription>
+		<AssemblyConfiguration></AssemblyConfiguration>
+		<AssemblyCompany>Mendeo</AssemblyCompany>
+		<AssemblyProduct>Mercurius</AssemblyProduct>
+	</PropertyGroup>
+	
+	<Target Name="CommonSystemInformation">
+		<Computer>
+			<Output TaskParameter="Name" PropertyName="BuildMachineName" />
+			<Output TaskParameter="IPAddress" PropertyName="BuildMachineIPAddress" />
+			<Output TaskParameter="OSPlatform" PropertyName="BuildMachineOSPlatform" />
+			<Output TaskParameter="OSVersion" PropertyName="BuildMachineOSVersion" />
+		</Computer>
+		
+		<Message Text="-----------------------System Information-----------------------" />
+		<Message Text="Name: $(BuildMachineName)" />
+		<Message Text="IPAddress: $(BuildMachineIPAddress)" />
+		<Message Text="MachineOS: $(BuildMachineOSPlatform)" />
+		<Message Text="OSVersion: $(BuildMachineOSVersion)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="CommonUserInformation">
+		<User>
+			<Output TaskParameter="UserNameWithDomain" PropertyName="BuildUserID" />
+			<Output TaskParameter="FullName" PropertyName="BuildUserName" />
+			<Output TaskParameter="Email" PropertyName="BuildUserEmail" />
+			<Output TaskParameter="Phone" PropertyName="BuildUserPhone" />
+		</User> 
+		
+		<Message Text="-----------------------User Information-------------------------" />
+		<Message Text="UserNameWithDomain: $(BuildUserID)" />
+		<Message Text="FullName: $(BuildUserName)" />
+		<Message Text="Email: $(BuildUserEmail)" />
+		<Message Text="Phone: $(BuildUserPhone)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="Common-Find-Tools">
+	</Target>
+	
+	<Target Name="Set-Framework-Configuration">
+		<Message Text="--------------------Framework Configuration---------------------" />
+		<Message Text="Version: $(ToolsVersion)" />
+		<Message Text="$(MSBuildToolsPath)" />
+		<Message Text="Target File Used: $(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+		<Message Text="Bin Directory $(MSBuildBinPath)" />
+		<Message Text="Extensions Path $(MSBuildExtensionsPath)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="Set-Project-Configuration">	
+		<CreateProperty Value="$(Root_Dir)\$(Lib_Family_Dir)">
+			<Output TaskParameter="Value" PropertyName="Lib_Dir"/>
+		</CreateProperty>
+		
+		<CreateProperty Value="$(Build_Dir)\$(Build_Type)-$(Platform)-$(ToolsVersion)">
+			<Output TaskParameter="Value" PropertyName="Build_Project_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="Show-Init-Information">
+		<Message Text="--------------------------Initialization------------------------" />
+		<Message Text="Startup Directory: $(MSBuildStartupDirectory)" />
+		<Message Text="Source Directory: $(Src_Dir)" />
+		<Message Text="Build Directory: $(Build_Dir)" />
+		<Message Text="Lib Directory: $(Lib_Dir)" />
+		<Message Text="Build Base Directory: $(Build_Base_Dir)" />
+		<Message Text="Csproj File: $(Csproj_File)" />
+		<Message Text="Platform: $(Platform)" />
+		<Message Text="BuildType: $(Build_Type)" />
+		<Message Text="ToolsVersion: $(ToolsVersion)" />
+		<Message Text="Build Project Dir: $(Build_Project_Dir)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="Show-WebSite-Information">
+		<Message Text="--------------------------Initialization------------------------" />
+		<Message Text="Source Site: $(Build_Dir)\_PublishedWebsites\$(AssemblyOutputName)" />
+		<Message Text="Target Site: $(Build_Project_Dir)\$(AssemblyOutputName)" />
+		<Message Text="Tools Dir: $(MSBuildToolsPath)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="PopulateSvnVersion">
+		<SvnVersion LocalPath="$(Src_Dir)" Condition="$(SvnRevisionNumber) &lt;= 0">
+			<Output TaskParameter="Revision" PropertyName="SvnRevisionNumber" />
+		</SvnVersion>
+		
+		<Message Text="---------------------------Svn Revision-------------------------" />
+		<Message Text="Svn Revision: $(SvnRevisionNumber)" />
+		<Message Text="----------------------------------------------------------------" />
+	</Target>
+	
+	<Target Name="Common-Init" DependsOnTargets="Common-Find-Tools;Set-Framework-Configuration;Set-Project-Configuration;Show-Init-Information">
+		<ItemGroup>
+			<ProjectSources Include="$(Src_Dir)\**\*.cs" Exclude="$(Src_Dir)\Properties\*.cs" />
+		</ItemGroup>
+	</Target>
+</Project>
+

@@ -1,0 +1,102 @@
+﻿<div class="col-md-3 filtering-panel">
+
+    <div class="col-md-12">
+        <div class="b-tagline-box b-tagline-box--no-shadow">
+            <div class="b-tagline_title f-tagline_title f-primary-l">
+                <span>Votre Recherche</span>
+                <span class="fa fa-minus-square btnclear" ng-click="vm.clearFilter('querySearch')" ng-show="vm.querySearch != null"></span>
+            </div>
+            <div class="f-tagline_description">
+                <md-input-container class="md-icon-float">
+                    <label>Terme &agrave; rechercher</label>
+                    <md-icon md-svg-src="/Content/img/mendeo/search.svg" class="search"></md-icon>
+                    <input ng-model="vm.querySearch" type="text" ng-model-options="{ debounce: 250 }" />
+                </md-input-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" ng-class="{'hideAccordion': vm.bucketTreeSelected.selectedBucketTree.length == 0}">
+        <accordion close-others="false">
+            <accordion-group heading="Selected {{bucket.name}}" is-open="true" ng-repeat="bucket in vm.bucketTreeSelected.selectedBucketTree">
+                <div class="b-form-row" ng-repeat="bucketItem in bucket.childrens" ng-show="bucket.primitiveType == 0">
+                    <span class="fa fa-ban" ng-click="vm.removeFromBucketSelected(bucket, bucketItem)"></span> <span>{{ bucketItem.name }}</span>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 1">
+                    <span class="fa fa-ban" ng-click="vm.removeFromBucketSelected(bucket, bucket.childrens[0])"></span>
+                    <span>Min: {{ bucket.childrens[0].numberMinRangeValue }}</span>
+                    <span>Max: {{ bucket.childrens[0].numberMaxRangeValue }}</span>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 2">
+                    <span class="fa fa-ban" ng-click="vm.removeFromBucketSelected(bucket, bucket.childrens[0])"></span>
+                    <span>Value: {{ bucket.childrens[0].boolValue }}</span>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 3">
+                    <span class="fa fa-ban" ng-click="vm.removeFromBucketSelected(bucket, bucket.childrens[0])"></span>
+                    <span>Min: {{ bucket.childrens[0].dateMinRangeValue }}</span>
+                    <span>Max: {{ bucket.childrens[0].dateMaxRangeValue }}</span>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+
+    <div class="col-md-12">
+
+        <dir-pagination-controls pagination-id="attr" template-url="/scripts/pagination/attributePagination.tpl.html" on-page-change="vm.pageChangedBucketTree(newPageNumber)"></dir-pagination-controls>
+
+        <accordion close-others="false">
+            <accordion-group heading="{{ bucket.name }}" is-open="bucket.show" dir-paginate="bucket in vm.bucketTree | itemsPerPage: vm.sizeBucketTree" total-items="vm.pageNumTotalBucketTree" pagination-id="attr">
+
+                <div class="b-form-row" ng-repeat="bucketItem in bucket.childrens" ng-show="bucket.primitiveType == 0 && !bucket.selected">
+                    <span class="btnClick" ng-click="vm.addToBucketSelected(bucket, bucketItem)">{{ bucketItem.name }} ({{ bucketItem.documentCount }})</span>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 1 && !bucket.selected">
+                    <h3>Number</h3>
+                    <md-input-container flex>
+                        <label>Number Min ({{bucket.minFloorValue}})</label>
+                        <input type="number" ng-model="bucket.childrens[0].numberMinRangeValue">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Number Max ({{bucket.maxCeilValue}})</label>
+                        <input type="number" ng-model="bucket.childrens[0].numberMaxRangeValue">
+                    </md-input-container>
+
+                    <a class="b-btn b-btn--load f-btn b-btn-sm f-btn-load f-btn-sm f-primary-b" ng-click="vm.addToBucketSelected(bucket, bucket.childrens[0])">Ajouter</a>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 2 && !bucket.selected">
+                    <h3>Boolean</h3>
+                    <md-checkbox ng-model="bucket.childrens[0].boolValue" aria-label="BoolValue">
+                        Value: {{ bucket.childrens[0].boolValue }}
+                    </md-checkbox>
+                    <a class="b-btn b-btn--load f-btn b-btn-sm f-btn-load f-btn-sm f-primary-b" ng-click="vm.addToBucketSelected(bucket, bucket.childrens[0])">Ajouter</a>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.primitiveType == 3 && !bucket.selected">
+                    <h3>Date</h3>
+                    <md-input-container flex>
+                        <label>Min Date</label>
+                        <input type="date" ng-model="bucket.childrens[0].dateMinRangeValue">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Max Date</label>
+                        <input type="date" ng-model="bucket.childrens[0].dateMaxRangeValue">
+                    </md-input-container>
+                    <a class="b-btn b-btn--load f-btn b-btn-sm f-btn-load f-btn-sm f-primary-b" ng-click="vm.addToBucketSelected(bucket, bucket.childrens[0])">Ajouter</a>
+                </div>
+
+                <div class="b-form-row" ng-show="bucket.selected">
+                    <h3>Filtre d&eacute;j&Agrave; appliqu&eacute;</h3>
+                </div>
+
+            </accordion-group>
+        </accordion>
+
+        <dir-pagination-controls pagination-id="attr" template-url="/scripts/pagination/attributePagination.tpl.html" on-page-change="vm.pageChangedBucketTree(newPageNumber)"></dir-pagination-controls>
+
+    </div>
+</div>

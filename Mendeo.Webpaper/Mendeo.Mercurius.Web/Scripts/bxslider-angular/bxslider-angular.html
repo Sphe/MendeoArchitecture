@@ -1,0 +1,35 @@
+﻿<div class="b-some-examples f-some-examples j-carousel-secondary">
+    <div class="b-some-examples__item f-some-examples__item" ng-repeat="topOffer in varCollection">
+        <div class="b-some-examples__item_img view view-sixth">
+            <a href="/view/{{ topOffer.productCode }}"><img data-retina="" ng-src="{{ '//mercurius.mendeo.com/ProductImage/' + getHomeSliderImages(topOffer) }}" alt=""></a>
+            <div class="b-item-hover-action f-center mask">
+                <div class="b-item-hover-action__inner">
+                    <div class="b-item-hover-action__inner-btn_group">
+                        <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-some-examples__item_info">
+            <div class="b-some-examples__item_info_level b-some-examples__item_name f-some-examples__item_name f-primary-b"><a href="/view/{{ topOffer.productCode }}">{{ topOffer.productCultureMap[0].productName }}</a></div>
+            <div class="b-some-examples__item_info_level b-some-examples__item_double_info f-some-examples__item_double_info clearfix">
+                <div class="b-stars-group f-stars-group">
+                    <i class="fa fa-star is-active-stars"></i>
+                    <i class="fa fa-star is-active-stars"></i>
+                    <i class="fa fa-star is-active-stars"></i>
+                    <i class="fa fa-star is-active-stars"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <div class="b-some-examples__item_info_level b-some-examples__item_description f-some-examples__item_description">
+                {{ topOffer.productCultureMap[0].shortDescription }}
+            </div>
+        </div>
+        <div class="b-some-examples__item_action">
+            <div class="b-right">
+                <a href="/view/{{ topOffer.productCode }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">Voir l'annonce...</a>
+            </div>
+            <div class="b-remaining b-some-examples__item_total f-some-examples__item_total f-primary-b">{{ topOffer.productCultureMap[0].BaseUnitPrice }}</div>
+        </div>
+    </div>
+</div>

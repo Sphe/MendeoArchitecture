@@ -1,0 +1,27 @@
+﻿<div class="container b-container-login-page">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{::vm.title}}</h2>
+            <div class="row">
+                <div class="col-md-7">
+                    <sk-change-password ng-if="vm.manageInfo.hasLocalLogin"></sk-change-password>
+                    <sk-create-local-login ng-if="!vm.manageInfo.hasLocalLogin"></sk-create-local-login>
+                </div>
+                <div class="col-md-5">
+                    <h4>Comptes enregistr&eacute;s</h4>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="login in vm.userLogins | orderBy: 'loginProvider'">
+                            <sk-user-login login="login" action="vm.removeLogin(login)"></sk-user-login>
+                        </li>
+                    </ul>
+                    <h4>Ajouter un autre compte</h4>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="provider in vm.loginProviders | usedLoginProviderFilter:vm.userLogins | orderBy: 'name'" class="inline">
+                            <sk-login-provider provider="provider" action="vm.addLogin(provider)"></sk-login-provider>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

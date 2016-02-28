@@ -1,0 +1,21 @@
+﻿<div class="container" ng-if="1 < pages.length">
+    <div class="b-pagination f-pagination">
+        <ul ng-if="1 < pages.length">
+            <li ng-class="{ disabled : pagination.current == 1 }">
+                <a href="" ng-click="setCurrent(1)">&laquo;</a>
+            </li>
+            <li ng-class="{ disabled : pagination.current == 1 }">
+                <a class="prev" href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+            </li>
+            <li class="is-active-pagination">
+                <a>{{ pagination.current }}</a>
+            </li>
+            <li ng-class="{ disabled : pagination.current == pagination.last }">
+                <a class="next" href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+            </li>
+            <li ng-class="{ disabled : pagination.current == pagination.last }">
+                <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B0D65D5-1D77-4F6E-A3D7-114960C5CE6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mendeo.Mercurius.ExcelBusiness</RootNamespace>
+    <AssemblyName>Mendeo.Mercurius.ExcelBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperExtentions.cs" />
+    <Compile Include="Contract\IProductModule.cs" />
+    <Compile Include="ProductModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mendeo.Common.Core\Mendeo.Common.Core.csproj">
+      <Project>{2e8c4824-69be-4376-99fc-9772896c9318}</Project>
+      <Name>Mendeo.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Data.FullDomain\Mendeo.Mercurius.Data.FullDomain.csproj">
+      <Project>{90582bcc-cce2-4879-9f9e-06a5676e3b2f}</Project>
+      <Name>Mendeo.Mercurius.Data.FullDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Dto\Mendeo.Mercurius.Dto.csproj">
+      <Project>{ecad9fb5-7766-4013-980d-63e63eb30a52}</Project>
+      <Name>Mendeo.Mercurius.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Enum\Mendeo.Mercurius.Enum.csproj">
+      <Project>{57daf226-17e5-4829-a46f-7482d75d0fc2}</Project>
+      <Name>Mendeo.Mercurius.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mendeo.Mercurius.Service\Mendeo.Mercurius.Service.csproj">
+      <Project>{74012ae2-2330-41fb-b977-ab52168939d3}</Project>
+      <Name>Mendeo.Mercurius.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

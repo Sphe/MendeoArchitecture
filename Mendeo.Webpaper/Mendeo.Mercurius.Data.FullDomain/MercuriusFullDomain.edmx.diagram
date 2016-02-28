@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75821daa5f164de3a8a281d4007bd347" Name="Diagram1" ZoomLevel="13">
+        <EntityTypeShape EntityType="MercuriusFullModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AbuseProductReviewMap" Width="1.5" PointX="13.5" PointY="54.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Address" Width="1.5" PointX="14" PointY="33.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AddressType" Width="1.5" PointX="11.75" PointY="35.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Attribute" Width="1.5" PointX="9" PointY="71.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AttributeBehavior" Width="1.5" PointX="9" PointY="58.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AttributeCategoryMap" Width="1.5" PointX="14.25" PointY="67.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AttributeEvent" Width="1.5" PointX="11.25" PointY="57.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AttributeItem" Width="1.5" PointX="6.75" PointY="70.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AttributeType" Width="1.5" PointX="4.5" PointY="71.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Category" Width="1.5" PointX="3.75" PointY="62.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.CategoryCultureMap" Width="1.5" PointX="6" PointY="43.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.CategoryImageMap" Width="1.5" PointX="16.25" PointY="33.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.CategoryProductMap" Width="1.5" PointX="14.25" PointY="40.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Continent" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Culture" Width="1.5" PointX="0.75" PointY="42.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ELMAH_Error" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.EncryptionType" Width="1.5" PointX="6.75" PointY="62.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Image" Width="1.5" PointX="9" PointY="10.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ImageType" Width="1.5" PointX="6.75" PointY="11" />
+        <EntityTypeShape EntityType="MercuriusFullModel.MailerTemplate" Width="1.5" PointX="3" PointY="52.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.MailerTemplateType" Width="1.5" PointX="0.75" PointY="60.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Page" Width="1.5" PointX="0.75" PointY="52.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PageBehavior" Width="1.5" PointX="12" PointY="62.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PageCultureMap" Width="1.5" PointX="3" PointY="47.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PageEvent" Width="1.5" PointX="14.25" PointY="49.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PageType" Width="1.5" PointX="1.5" PointY="57.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.People" Width="1.5" PointX="6.75" PointY="65" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Phone" Width="1.5" PointX="9" PointY="65.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PhoneType" Width="1.5" PointX="6.75" PointY="75.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PrintTemplate" Width="1.5" PointX="3" PointY="44.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PrintTemplateType" Width="1.5" PointX="0.75" PointY="49.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Product" Width="1.5" PointX="9" PointY="18.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductAnnounceType" Width="1.5" PointX="6.75" PointY="27.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductAnnounceTypeCultureMap" Width="1.5" PointX="3" PointY="39.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductAttributeMap" Width="1.5" PointX="16.25" PointY="43.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductBehavior" Width="1.5" PointX="15" PointY="62.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductCultureMap" Width="1.5" PointX="6" PointY="52.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductEvent" Width="1.5" PointX="17.25" PointY="57.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductFavorite" Width="1.5" PointX="14.25" PointY="46.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductImageMap" Width="1.5" PointX="11.25" PointY="21" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductImageType" Width="1.5" PointX="9" PointY="15.75" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductReview" Width="1.5" PointX="11.25" PointY="47.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatus" Width="1.5" PointX="11.25" PointY="27.25" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusInternalComment" Width="1.5" PointX="11.25" PointY="31.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusInternalCommentMap" Width="1.5" PointX="13.5" PointY="27.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReason" Width="1.5" PointX="3.75" PointY="67.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonCategory" Width="1.5" PointX="3.75" PointY="28" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonCategoryCultureMap" Width="1.5" PointX="6" PointY="39.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonCultureMap" Width="1.5" PointX="6" PointY="47.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonEntry" Width="1.5" PointX="14.25" PointY="23.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonEntryMap" Width="1.5" PointX="16.5" PointY="27.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusReasonLink" Width="1.5" PointX="17" PointY="36.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusType" Width="1.5" PointX="0.75" PointY="35.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductStatusTypeCultureMap" Width="1.5" PointX="3" PointY="35.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.RolePermission" Width="1.5" PointX="17" PointY="40.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.RolePermissionMap" Width="1.5" PointX="19.25" PointY="43.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.SellerType" Width="1.5" PointX="3.75" PointY="32" />
+        <EntityTypeShape EntityType="MercuriusFullModel.SellerTypeCultureMap" Width="1.5" PointX="6" PointY="35.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.User" Width="1.5" PointX="9" PointY="47.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserReview" Width="1.5" PointX="17.25" PointY="48" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserReviewMap" Width="1.5" PointX="19.5" PointY="48.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserReviewType" Width="1.5" PointX="6.75" PointY="31.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserReviewTypeCultureMap" Width="1.5" PointX="9" PointY="43.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserRole" Width="1.5" PointX="14" PointY="43.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.UserRoleMap" Width="1.5" PointX="16.25" PointY="54.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.WhishList" Width="1.5" PointX="9" PointY="38.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.WhishListBehavior" Width="1.5" PointX="9" PointY="36.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.WhishListEvent" Width="1.5" PointX="11.25" PointY="42.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.WhishListProductMap" Width="1.5" PointX="11.25" PointY="39" />
+        <EntityTypeShape EntityType="MercuriusFullModel.CsvDelimiter" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.CustomExport" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="MercuriusFullModel.SourceType" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.City" Width="1.5" PointX="6.75" PointY="20.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Continent1" Width="1.5" PointX="2.25" PointY="19.625" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Country" Width="1.5" PointX="4.5" PointY="18.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PostalCode" Width="1.5" PointX="6.75" PointY="14.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.Region" Width="1.5" PointX="4.5" PointY="24.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.AccountMailQueue" Width="1.5" PointX="14.25" PointY="57.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductMailQueue" Width="1.5" PointX="5.25" PointY="57.875" />
+        <EntityTypeShape EntityType="MercuriusFullModel.QueueStatus" Width="1.5" PointX="12" PointY="70.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.GlobalSetting" Width="1.5" PointX="10" PointY="1" />
+        <EntityTypeShape EntityType="MercuriusFullModel.GlobalSettingType" Width="1.5" PointX="7.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PeopleOnline" Width="1.5" PointX="11.25" PointY="67.125" />
+        <EntityTypeShape EntityType="MercuriusFullModel.PeopleOnlineHistory" Width="1.5" PointX="11.25" PointY="53.5" />
+        <EntityTypeShape EntityType="MercuriusFullModel.ProductAttributeMap2" Width="1.5" PointX="2.75" PointY="10.75" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AbuseProductReviewMap_ProductReview" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AbuseProductReviewMap_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Address_AddressType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Address_City" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Address_People" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Address_PostalCode" />
+        <AssociationConnector Association="MercuriusFullModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MercuriusFullModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Attribute_AttributeItem" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Attribute_AttributeType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeCategoryMap_Attribute" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeEvent_Attribute" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductAttributeMap_Attribute" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeEvent_AttributeBehavior" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeCategoryMap_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeEvent_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AttributeItem_AttributeType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CategoryCultureMap_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CategoryImageMap_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CategoryProductMap_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ChildrenCategory_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Page_Category" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CategoryCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CategoryImageMap_Image" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Categories_Products_Products" />
+        <AssociationConnector Association="MercuriusFullModel.FK_MailerCultureDetail_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PageCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductAnnounceTypeCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductReviews_Cultures" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonCategoryCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusTypeCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_SellerTypeCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ShoppingCart_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_User_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviews_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviewTypeCultureMap_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.PK_PrintTemplate_Culture" />
+        <AssociationConnector Association="MercuriusFullModel.FK_User_EncryptionType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Image_ImageType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductImageMap_Image" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AccountMailQueue_MailerTemplate" />
+        <AssociationConnector Association="MercuriusFullModel.FK_MailerCultureDetail_MailerTemplates" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductMailQueue_MailerTemplate" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ChildrenPage_Page" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Page_PageType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PageCultureMap_Page" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PageEvent_PageBehavior" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PageEvent_PageCultureMap" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PageEvent_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Phone_People" />
+        <AssociationConnector Association="MercuriusFullModel.FK_User_People" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Phone_PhoneType" />
+        <AssociationConnector Association="MercuriusFullModel.PK_PrintTemplate_PrintTemplateType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Product_City" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Product_PostalCode" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Product_ProductAnnounceType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Product_ProductStatusType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Product_SellerType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductAttributeMap_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductCultureMap_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductFavorite_ProductID" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductImageMap_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductMailQueue_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductReview_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatus_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviews_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_WhishListEvent_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_WhishListProductMap_Product" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductAnnounceTypeCultureMap_ProductAnnounceType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductEvent_ProductBehavior" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductEvent_ProductCultureMap" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductEvent_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductFavorite_UserID" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductImageMap_ProductImageType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductReview_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatus_ProductStatusType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusInternalCommentMap_ProductStatus" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonEntryMap_ProductStatus" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusInternalCommentMap_ProductStatusInternalComment" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonCultureMap_ProductStatusReason" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonEntry_ProductStatusReason" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonLink_ProductStatusReason" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonCategoryCultureMap_ProductStatusReasonCategory" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonEntry_ProductStatusReasonCategory" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonLink_ProductStatusReasonCategory" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusReasonEntryMap_ProductStatusReasonEntry" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductStatusTypeCultureMap_ProductStatusType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_RolePermissionMap_RolePermission" />
+        <AssociationConnector Association="MercuriusFullModel.FK_RolePermissionMap_UserRole" />
+        <AssociationConnector Association="MercuriusFullModel.FK_SellerTypeCultureMap_SellerType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_User_SellerType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AccountMailQueue_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PeopleOnline_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PeopleOnlineHistory_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ShoppingCart_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ShoppingCartEvent_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReview_User_Reviewed" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReview_User_Reviewer" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserRoleMap_User" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviewMap_UserReview" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviewMap_UserReviewType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserReviewTypeCultureMap_UserReviewType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_UserRoleMap_UserRole" />
+        <AssociationConnector Association="MercuriusFullModel.FK_WhishListEvent_WhishList" />
+        <AssociationConnector Association="MercuriusFullModel.FK_WhishListProductMap_WhishList" />
+        <AssociationConnector Association="MercuriusFullModel.FK_WhishListEvent_WhishListBehavior" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CustomExport_CsvDelimiter" />
+        <AssociationConnector Association="MercuriusFullModel.FK_CustomExport_SourceType" />
+        <AssociationConnector Association="MercuriusFullModel.FK_City_Country" />
+        <AssociationConnector Association="MercuriusFullModel.FK_City_Region" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PostalCode_City" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Country_Continent" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PostalCode_Country" />
+        <AssociationConnector Association="MercuriusFullModel.FK_Region_Country" />
+        <AssociationConnector Association="MercuriusFullModel.FK_PostalCode_Region" />
+        <AssociationConnector Association="MercuriusFullModel.FK_AccountMailQueue_QueueStatus" />
+        <AssociationConnector Association="MercuriusFullModel.FK_ProductMailQueue_QueueStatus" />
+        <AssociationConnector Association="MercuriusFullModel.FK_GlobalSetting_GlobalSettingType" />
+        <AssociationConnector Association="MercuriusFullModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

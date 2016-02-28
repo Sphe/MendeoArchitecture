@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <job>
+      <name>ProductMailerQueueJob</name>
+      <group>productMailerGroup</group>
+      <description>ProductMailerQueueJob</description>
+      <job-type>Mendeo.Mercurius.Jobs.ProductMailerQueueJob, Mendeo.Mercurius.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
+    <trigger>
+      <cron>
+        <name>cronEvery1MinProductMailer</name>
+        <group>cronGroup</group>
+        <job-name>ProductMailerQueueJob</job-name>
+        <job-group>productMailerGroup</job-group>
+        <cron-expression>30 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>PeopleOnlineQueueJob</name>
+      <group>peopleOnlineGroup</group>
+      <description>PeopleOnlineQueueJob</description>
+      <job-type>Mendeo.Mercurius.Jobs.PeopleOnlineQueueJob, Mendeo.Mercurius.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
+    <trigger>
+      <cron>
+        <name>cronEvery1MinPeopleOnline</name>
+        <group>cronGroup</group>
+        <job-name>PeopleOnlineQueueJob</job-name>
+        <job-group>peopleOnlineGroup</job-group>
+        <cron-expression>30 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>ProductWorkflowJob</name>
+      <group>productGroup</group>
+      <description>ProductWorkflowJob</description>
+      <job-type>Mendeo.Mercurius.Jobs.ProductWorkflowJob, Mendeo.Mercurius.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
+    <trigger>
+      <cron>
+        <name>cronEvery30sec</name>
+        <group>cronGroup</group>
+        <job-name>ProductWorkflowJob</job-name>
+        <job-group>productGroup</job-group>
+        <cron-expression>15/30 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>ESDeleteIndexProductJob</name>
+      <group>maintenance</group>
+      <description>ESDeleteIndexProductJob</description>
+      <job-type>Mendeo.Mercurius.Jobs.ESDeleteIndexProductJob, Mendeo.Mercurius.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
+    <trigger>
+      <cron>
+        <name>cronEveryDayMaintenance</name>
+        <group>cronGroupMaintenance</group>
+        <job-name>ESDeleteIndexProductJob</job-name>
+        <job-group>maintenance</job-group>
+        <cron-expression>00 30 23 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    
+    <!--<job>
+      <name>ESDeleteIndexProductJob</name>
+      <group>esGroup</group>
+      <description>ESDeleteIndexProductJob</description>
+      <job-type>Mendeo.Mercurius.Jobs.ESDeleteIndexProductJob, Mendeo.Mercurius.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    
+	<trigger>
+      <simple>
+        <name>sampleSimpleTrigger</name>
+        <group>sampleSimpleGroup</group>
+        <description>Simple trigger to simply fire sample job</description>
+        <job-name>ESDeleteIndexProductJob</job-name>
+        <job-group>esGroup</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>1</repeat-count>
+        <repeat-interval>100000000</repeat-interval>
+      </simple>
+    </trigger>-->
+    
+  </schedule>
+  
+</job-scheduling-data>

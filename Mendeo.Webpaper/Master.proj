@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+	<Import Project="Common-project.proj" />
+	
+	<PropertyGroup>
+        <Root_Dir>$(MSBuildStartupDirectory)</Root_Dir>
+    </PropertyGroup>
+	
+	<ItemGroup>
+        <ProjectReferencesMercuriusWeb Include="Mendeo.Common.proj" />
+		<ProjectReferencesMercuriusWeb Include="Mendeo.Mercurius.proj" />
+    </ItemGroup>
+	
+	<Target Name="CreateBuildDirectory">
+		<MakeDir Directories="$(Build_Dir)" />
+	</Target>
+	
+	<Target Name="DeleteBuildDirectory">
+		<RemoveDir Directories="$(Build_Dir)" />
+	</Target>
+	
+	<Target Name="Init">
+		<CallTarget Targets="Common-Init"/>
+		<CallTarget Targets="CreateBuildDirectory"/>
+	</Target>
+	
+	<Target Name="ChangeBuildDir">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="ChangeBuildDirToMercuriusWeb">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)\mercuriusweb">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="ChangeBuildDirToMercuriusAdminWeb">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)\mercuriusadminweb">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<Target Name="ChangeBuildDirToMercuriusScheduler">
+		<CreateProperty Value="$(Root_Dir)\$(Build_Family_Dir)\mercuriusscheduler">
+			<Output TaskParameter="Value" PropertyName="Build_Dir"/>
+		</CreateProperty>
+	</Target>
+	
+	<!-- Entry point for building Mendeo.Mercurius Projects -->
+	
+	<Target Name="Clean" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+	</Target>
+		
+	<Target Name="CleanMercuriusWeb" DependsOnTargets="CommonSystemInformation;ChangeBuildDirToMercuriusWeb;Common-Init;DeleteBuildDirectory">
+	</Target>
+	
+	<Target Name="DeepClean" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+            Targets="DeepClean">
+        </MSBuild>
+	</Target>
+	
+	<Target Name="BuildMercuriusWeb" DependsOnTargets="Clean;CommonSystemInformation;ChangeBuildDirToMercuriusWeb;Init;Common-Copy-References">		
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+			Properties="Build_Dir=$(Build_Dir);Build_Type=$(Build_Type);Platform=$(Platform)"
+            Targets="Build">
+            <Output
+                TaskParameter="TargetOutputs"
+                ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+	</Target>
+
+	<Target Name="DeepCleanScheduler" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+            Targets="DeepCleanScheduler">
+        </MSBuild>
+	</Target>
+	
+	<Target Name="BuildMercuriusScheduler" DependsOnTargets="Clean;CommonSystemInformation;ChangeBuildDirToMercuriusScheduler;Init;Common-Copy-References">		
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+			Properties="Build_Dir=$(Build_Dir);Build_Type=$(Build_Type);Platform=$(Platform)"
+            Targets="BuildScheduler">
+            <Output
+                TaskParameter="TargetOutputs"
+                ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+	</Target>
+	
+	<Target Name="DeepCleanAdmin" DependsOnTargets="CommonSystemInformation;ChangeBuildDir;Common-Init;DeleteBuildDirectory">
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+            Targets="DeepCleanAdmin">
+        </MSBuild>
+	</Target>
+	
+	<Target Name="BuildMercuriusWebAdmin" DependsOnTargets="Clean;CommonSystemInformation;ChangeBuildDirToMercuriusAdminWeb;Init;Common-Copy-References">		
+		<MSBuild
+            Projects="@(ProjectReferencesMercuriusWeb)"
+			Properties="Build_Dir=$(Build_Dir);Build_Type=$(Build_Type);Platform=$(Platform)"
+            Targets="BuildAdmin">
+            <Output
+                TaskParameter="TargetOutputs"
+                ItemName="AssembliesBuiltByChildProjects" />
+        </MSBuild>
+	</Target>
+	
+</Project>

@@ -1,0 +1,72 @@
+﻿<div class="col-md-9 ">
+    <div class="b-sort-panel">
+        <div class="b-select b-left">
+            <ui-select ng-model="vm.numProductSelect"
+                       theme="bootstrap"
+                       search-enabled="false"
+                       style="width: 300px;">
+                <ui-select-match placeholder="Nombre d'annonce à afficher ...">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="choice in vm.productToShowChoices">
+                    <div ng-bind-html="choice.label"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="b-select b-left">
+            <ui-select ng-model="vm.sortProductSelect"
+                       theme="bootstrap"
+                       search-enabled="false"
+                       style="width: 300px;">
+                <ui-select-match placeholder="Trier les annonces ...">{{$select.selected.label}}</ui-select-match>
+                <ui-select-choices repeat="choice in vm.productToSortChoices">
+                    <div ng-bind-html="choice.label"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <div class="b-view-switcher f-view-switcher b-right">
+            <div ng-click="vm.setToRow()" class="b-view-switcher_column fa fa-th-list"></div>
+            <div ng-click="vm.setToGrid()" class="b-view-switcher_table is-view-switcher__item-active fa fa-th"></div>
+            <div ng-click="vm.setToMap()" class="b-view-switcher_table fa fa-map-marker"></div>
+        </div>
+    </div>
+    <div class="row">
+        <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)" pagination-id="prodgrid"></dir-pagination-controls>
+
+        <div class="b-col-default-indent">
+            <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12" dir-paginate="prod in vm.productBag.contextProducts | itemsPerPage: vm.numProductSelect.id" total-items="vm.productBag.total" pagination-id="prodgrid">
+                <div class="b-product-preview">
+                    <div class="b-product-preview__img view view-sixth">
+                        <a href="/view/{{ prod.productCode }}">
+                            <img data-retina ng-src="{{ vm.prefixProductImageUrl + (prod.images | filter:{imageType:'ImageProductList'})[0].imageUrl }}" alt="" />
+                        </a>
+                        <div class="b-item-hover-action f-center mask">
+                            <div class="b-item-hover-action__inner">
+                                <div class="b-item-hover-action__inner-btn_group">
+                                    <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-heart"></i></a>
+                                    <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-shopping-cart"></i></a>
+                                    <a href="shop_detail.html" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-product-preview__content">
+                        <div class="b-product-preview__content_col b-product-preview__content_height">
+                            <span class="b-product-preview__content_price f-product-preview__content_price f-primary-b" ng-show="prod.price > 1">{{ prod.price | trimBigPrice }}</span>
+
+                        </div>
+                        <div class="b-product-preview__content_col">
+                            <a href="/view/{{ prod.productCode }}" class="f-product-preview__content_title">{{ prod.productName | limitTo:15 }}</a>
+                            <div class="f-product-preview__content_category f-primary-b"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix hidden-xs"></div>
+            <div class="clearfix visible-xs-block"></div>
+        </div>
+
+        <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)" pagination-id="prodgrid"></dir-pagination-controls>
+
+    </div>
+</div>

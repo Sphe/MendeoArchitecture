@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+
+	<PropertyGroup>
+        <Root_Dir>.</Root_Dir>
+		<Src_Dir>$(MSBuildProjectDirectory)</Src_Dir>
+		<Common_TestRunner_Enabled>True</Common_TestRunner_Enabled>
+    </PropertyGroup>
+	
+	<Import Project="$(Root_Dir)\Common-project.proj" />
+		
+	<ItemGroup>
+        <AllBuildProjectReferences Include="Mendeo.Mercurius.Data.FullDomain/Mendeo.Mercurius.Data.FullDomain.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Data.Repository.FullDomain/Mendeo.Mercurius.Data.Repository.FullDomain.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Model.FullDomain/Mendeo.Mercurius.Model.FullDomain.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Service/Mendeo.Mercurius.Service.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Dto/Mendeo.Mercurius.Dto.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Enum/Mendeo.Mercurius.Enum.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Mvc/Mendeo.Mercurius.Mvc.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Controller/Mendeo.Mercurius.Controller.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.WebApi/Mendeo.Mercurius.WebApi.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Bootstrap/Mendeo.Mercurius.Bootstrap.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Mercurius.Web/Mendeo.Mercurius.Web.proj" />
+    </ItemGroup>
+	
+	<ItemGroup>
+        <AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Data.FullDomain/Mendeo.Mercurius.Data.FullDomain.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Data.Repository.FullDomain/Mendeo.Mercurius.Data.Repository.FullDomain.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Model.FullDomain/Mendeo.Mercurius.Model.FullDomain.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Service/Mendeo.Mercurius.Service.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Dto/Mendeo.Mercurius.Dto.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Enum/Mendeo.Mercurius.Enum.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.Mvc/Mendeo.Mercurius.Mvc.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.AdminController/Mendeo.Mercurius.AdminController.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.AdminWebApi/Mendeo.Mercurius.AdminWebApi.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.AdminBootstrap/Mendeo.Mercurius.AdminBootstrap.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Mercurius.AdminWeb/Mendeo.Mercurius.AdminWeb.proj" />
+    </ItemGroup>
+	
+	<ItemGroup>
+        <AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Data.FullDomain/Mendeo.Mercurius.Data.FullDomain.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Data.Repository.FullDomain/Mendeo.Mercurius.Data.Repository.FullDomain.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Model.FullDomain/Mendeo.Mercurius.Model.FullDomain.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Service/Mendeo.Mercurius.Service.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Dto/Mendeo.Mercurius.Dto.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Mercurius.Enum/Mendeo.Mercurius.Enum.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Scheduler.Core/Mendeo.Scheduler.Core.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Scheduler.Config/Mendeo.Scheduler.Config.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Scheduler.Console/Mendeo.Scheduler.Console.proj" />
+    </ItemGroup>
+	
+	<Target Name="DeepClean" DependsOnTargets="Common-DeepClean">
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Common-Build">
+	</Target>
+	
+	<Target Name="DeepCleanAdmin" DependsOnTargets="Common-DeepClean-Admin">
+	</Target>
+	
+	<Target Name="BuildAdmin" DependsOnTargets="Common-Build-Admin">
+	</Target>
+	
+	<Target Name="DeepCleanScheduler" DependsOnTargets="Common-DeepClean-Scheduler">
+	</Target>
+	
+	<Target Name="BuildScheduler" DependsOnTargets="Common-Build-Scheduler">
+	</Target>
+	
+	<Target Name="Generate-AssemblyInfo" DependsOnTargets="Common-AssemblyInfo">
+	</Target>
+</Project>

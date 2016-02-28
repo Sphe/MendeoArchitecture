@@ -1,0 +1,134 @@
+﻿<div data-ng-controller="shellController">
+    <header>
+        <div data-ng-include="'/app/shell/topNav.html'"></div>
+    </header>
+
+    <div class="j-menu-container"></div>
+
+    <div class="l-main-container">
+        <div data-ng-view class="fade-animation" autoscroll="true"></div>
+    </div>
+
+    <footer>
+        <div class="b-footer-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12 f-copyright b-copyright">Copyright © Mendeo 2015 - Tous droits r&eacute;serv&eacute;s</div>
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="b-btn f-btn b-btn-default b-right b-footer__btn_up f-footer__btn_up j-footer__btn_up">
+                            <i class="fa fa-chevron-up"></i>
+                        </div>
+                        <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
+                            <ul>
+                                <li class="is-active-bottom-nav"><a href="/home">Accueil</a></li>
+                                <li><a href="/addProduct">Publier une annonce</a></li>
+                                <li><a href="/categoryList">Parcourir les annonces</a></li>
+                                <li><a href="http://www.mendeo.com" target="_blank">Mendeo</a></li>
+                                <li><a href="/cgu">Conditions G&eacute;n&eacute;rales d'Utilisation</a></li>
+                                <!--<li><a href="../../html/page_search_result.html">Pages</a></li>
+                                <li><a href="../../html/shortcode_typography.html">Shortcode</a></li>
+                                <li><a href="../../html/shop_listing_col.html">Shop</a></li>-->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="b-footer-secondary row">
+                <div class="col-md-4 col-sm-12 col-xs-12 f-center b-footer-logo-containter">
+                    <a href="http://www.mendeo.com" target="_blank"><img data-retina class="b-footer-logo color-theme" src="/content/img/Mendeo-horizontal.png" alt="Logo Mendeo" /></a>
+                    <div class="b-footer-logo-text f-footer-logo-text">
+                        <p>Votre nouveau DSI</p>
+                        <div class="b-btn-group-hor f-btn-group-hor">
+                            <a href="http://www.linkedin.com/company/mendeo" target="_blank" class="b-btn-group-hor__item f-btn-group-hor__item">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="http://www.facebook.com/mendeocorp" target="_blank" class="b-btn-group-hor__item f-btn-group-hor__item">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <!--<a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                                <i class="fa fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="b-btn-group-hor__item f-btn-group-hor__item">
+                                <i class="fa fa-behance"></i>
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <!--<h4 class="f-primary-b">Latest blog posts</h4>
+                    <div class="b-blog-short-post row">
+                        <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                                March 23, 2013
+                            </div>
+                        </div>
+                        <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                                March 23, 2013
+                            </div>
+                        </div>
+                        <div class="b-blog-short-post__item col-md-12 col-sm-4 col-xs-12 f-primary-b">
+                            <div class="b-blog-short-post__item_text f-blog-short-post__item_text">
+                                <a href="blog_detail_left_slidebar.html">Amazing post with all the goodies</a>
+                            </div>
+                            <div class="b-blog-short-post__item_date f-blog-short-post__item_date">
+                                March 23, 2013
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <h4 class="f-primary-b">Contact</h4>
+                    <div class="b-contacts-short-item-group">
+
+                        <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                            <div class="b-contacts-short-item__icon f-contacts-short-item__icon f-contacts-short-item__icon_lg b-left">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="b-remaining f-contacts-short-item__text">
+                                Mendeo Algérie<br />
+                                SARL Mendeo, Société à Responsabilité Limité,<br />
+                                Siège social : Centre Commercial, Zone urbaine des nouveaux logements numéro 12, Gué de Constantine, Alger, Algérie.<br />
+                                CRNC Alger 16/00 -  0996432  B<br />
+                            </div>
+                            <!--<div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_md">
+                                <i class="fa fa-skype"></i>
+                            </div>
+                            <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_phone">
+                                Skype: ask.company
+                            </div>-->
+                        </div>
+                        <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                            <div class="b-contacts-short-item__icon f-contacts-short-item__icon f-contacts-short-item__icon_lg b-left">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="b-remaining f-contacts-short-item__text">
+                                Mendeo France<br />
+                                Mendeo SAS, Société par Actions Simplifiée <br />
+                                Siège social : 12 rue Saint-Bernard, 75011 Paris, France<br />
+                                809 723 794 R.C.S. Paris.<br />
+                            </div>
+                        </div>
+                        <div class="b-contacts-short-item col-md-12 col-sm-4 col-xs-12">
+                            <div class="b-contacts-short-item__icon f-contacts-short-item__icon b-left f-contacts-short-item__icon_xs">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="b-remaining f-contacts-short-item__text f-contacts-short-item__text_email">
+                                <a href="mailto:soukannonce.contact@mendeo.com">soukannonce.contact@mendeo.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>

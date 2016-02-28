@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+	DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	ToolsVersion="4.0">
+
+	<PropertyGroup>
+        <Root_Dir>.</Root_Dir>
+		<Src_Dir>$(MSBuildProjectDirectory)</Src_Dir>
+		<Common_TestRunner_Enabled>True</Common_TestRunner_Enabled>
+    </PropertyGroup>
+	
+	<Import Project="$(Root_Dir)\Common-project.proj" />
+		
+	<ItemGroup>
+        <AllBuildProjectReferences Include="Mendeo.Common.Core/Mendeo.Common.Core.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Common.Data/Mendeo.Common.Data.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Common.Web.Mvc/Mendeo.Common.Web.Mvc.proj" />
+		<AllBuildProjectReferences Include="Mendeo.Common.WebApi/Mendeo.Common.WebApi.proj" />
+    </ItemGroup>
+	
+	<ItemGroup>
+        <AllBuildProjectAdminReferences Include="Mendeo.Common.Core/Mendeo.Common.Core.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Common.Data/Mendeo.Common.Data.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Common.Web.Mvc/Mendeo.Common.Web.Mvc.proj" />
+		<AllBuildProjectAdminReferences Include="Mendeo.Common.WebApi/Mendeo.Common.WebApi.proj" />
+    </ItemGroup>
+	
+	<ItemGroup>
+        <AllBuildSchedulerProjectReferences Include="Mendeo.Common.Core/Mendeo.Common.Core.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Common.Data/Mendeo.Common.Data.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Common.Web.Mvc/Mendeo.Common.Web.Mvc.proj" />
+		<AllBuildSchedulerProjectReferences Include="Mendeo.Common.WebApi/Mendeo.Common.WebApi.proj" />
+    </ItemGroup>
+	
+	<Target Name="DeepClean" DependsOnTargets="Common-DeepClean">
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Common-Build">
+	</Target>
+	
+	<Target Name="DeepCleanAdmin" DependsOnTargets="Common-DeepClean-Admin">
+	</Target>
+	
+	<Target Name="BuildAdmin" DependsOnTargets="Common-Build-Admin">
+	</Target>
+	
+	<Target Name="DeepCleanScheduler" DependsOnTargets="Common-DeepClean-Scheduler">
+	</Target>
+	
+	<Target Name="BuildScheduler" DependsOnTargets="Common-Build-Scheduler">
+	</Target>
+	
+	<Target Name="Generate-AssemblyInfo" DependsOnTargets="Common-AssemblyInfo">
+	</Target>
+</Project>

@@ -1,0 +1,211 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Mendeo.Mercurius.Workflow.ProductStatusNotifyApprovalActivity"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:local="clr-namespace:Mendeo.Mercurius.Workflow.Activity"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:mmd="clr-namespace:Mendeo.Mercurius.Dto;assembly=Mendeo.Mercurius.Dto"
+ xmlns:mme="clr-namespace:Mendeo.Mercurius.Enum;assembly=Mendeo.Mercurius.Enum"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="product" Type="InArgument(mmd:ProductDetailProductDto)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>Mendeo.Mercurius.Workflow.ProductStatusNotifyApprovalActivity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Mendeo.Mercurius.Enum</x:String>
+      <x:String>Mendeo.Mercurius.Enums</x:String>
+      <x:String>Mendeo.Mercurius.Dto</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>AutoMapper</AssemblyReference>
+      <AssemblyReference>AutoMapper.Net4</AssemblyReference>
+      <AssemblyReference>Elasticsearch.Net</AssemblyReference>
+      <AssemblyReference>EntityFramework</AssemblyReference>
+      <AssemblyReference>EntityFramework.SqlServer</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Nest</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Mendeo.Common.Core</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Data.FullDomain</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Data.Repository.FullDomain</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Dto</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Enum</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Model.FullDomain</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Service</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Mendeo.Mercurius.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="resultNotifyUserActivity" />
+    </Sequence.Variables>
+    <local:NotifyUserActivity sap2010:WorkflowViewState.IdRef="NotifyUserActivity_1">
+      <local:NotifyUserActivity.MailerTemplateType>
+        <InArgument x:TypeArguments="mme:MailerTemplateTypeEnum">
+          <mca:CSharpValue x:TypeArguments="mme:MailerTemplateTypeEnum">MailerTemplateTypeEnum.ProductApproved</mca:CSharpValue>
+        </InArgument>
+      </local:NotifyUserActivity.MailerTemplateType>
+      <local:NotifyUserActivity.ProductInArgument>
+        <InArgument x:TypeArguments="mmd:ProductDetailProductDto">
+          <mca:CSharpValue x:TypeArguments="mmd:ProductDetailProductDto">product</mca:CSharpValue>
+        </InArgument>
+      </local:NotifyUserActivity.ProductInArgument>
+      <local:NotifyUserActivity.Result>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">resultNotifyUserActivity</mca:CSharpReference>
+        </OutArgument>
+      </local:NotifyUserActivity.Result>
+    </local:NotifyUserActivity>
+    <If sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">resultNotifyUserActivity</mca:CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Default="False" Name="resultChangeProductStatusActivity" />
+          </Sequence.Variables>
+          <local:ChangeProductStatusActivity sap2010:WorkflowViewState.IdRef="ChangeProductStatusActivity_1">
+            <local:ChangeProductStatusActivity.NewProductStatus>
+              <InArgument x:TypeArguments="mme:ProductStatusTypeEnum">
+                <mca:CSharpValue x:TypeArguments="mme:ProductStatusTypeEnum">ProductStatusTypeEnum.APPROVED</mca:CSharpValue>
+              </InArgument>
+            </local:ChangeProductStatusActivity.NewProductStatus>
+            <local:ChangeProductStatusActivity.ProductInArgument>
+              <InArgument x:TypeArguments="mmd:ProductDetailProductDto">
+                <mca:CSharpValue x:TypeArguments="mmd:ProductDetailProductDto">product</mca:CSharpValue>
+              </InArgument>
+            </local:ChangeProductStatusActivity.ProductInArgument>
+            <local:ChangeProductStatusActivity.Result>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <mca:CSharpReference x:TypeArguments="x:Boolean">resultChangeProductStatusActivity</mca:CSharpReference>
+              </OutArgument>
+            </local:ChangeProductStatusActivity.Result>
+          </local:ChangeProductStatusActivity>
+          <If sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <mca:CSharpValue x:TypeArguments="x:Boolean">resultChangeProductStatusActivity</mca:CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <If.Then>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Default="False" Name="resultIndexProduct" />
+                </Sequence.Variables>
+                <local:IndexProductActivity sap2010:WorkflowViewState.IdRef="IndexProductActivity_1">
+                  <local:IndexProductActivity.ProductInArgument>
+                    <InArgument x:TypeArguments="mmd:ProductDetailProductDto">
+                      <mca:CSharpValue x:TypeArguments="mmd:ProductDetailProductDto">product</mca:CSharpValue>
+                    </InArgument>
+                  </local:IndexProductActivity.ProductInArgument>
+                  <local:IndexProductActivity.Result>
+                    <OutArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpReference x:TypeArguments="x:Boolean">resultIndexProduct</mca:CSharpReference>
+                    </OutArgument>
+                  </local:IndexProductActivity.Result>
+                </local:IndexProductActivity>
+                <If sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">resultIndexProduct</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <TerminateWorkflow sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="Final State" />
+                  </If.Then>
+                  <If.Else>
+                    <Throw sap2010:WorkflowViewState.IdRef="Throw_3">
+                      <InArgument x:TypeArguments="s:Exception">
+                        <mca:CSharpValue x:TypeArguments="s:Exception">new Exception("Product Indexing - failed")</mca:CSharpValue>
+                      </InArgument>
+                    </Throw>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Throw sap2010:WorkflowViewState.IdRef="Throw_1">
+                <InArgument x:TypeArguments="s:Exception">
+                  <mca:CSharpValue x:TypeArguments="s:Exception">new Exception("Product Creation - failed to change status to PENDING_APPROVAL")</mca:CSharpValue>
+                </InArgument>
+              </Throw>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Throw sap2010:WorkflowViewState.IdRef="Throw_2">
+          <InArgument x:TypeArguments="s:Exception">
+            <mca:CSharpValue x:TypeArguments="s:Exception">new Exception("Product Creation - Notify user creation failed.")</mca:CSharpValue>
+          </InArgument>
+        </Throw>
+      </If.Else>
+    </If>
+    <sads:DebugSymbol.Symbol>d2BEOlxfQWxleFxHaXRIdWJcTWVyY3VyaXVzXFNyY1xNZW5kZW8uTWVyY3VyaXVzLldvcmtmbG93XFByb2R1Y3RTdGF0dXNOb3RpZnlBcHByb3ZhbEFjdGl2aXR5LnhhbWwfQAOuAQ4CAQFCNUI8AgECRAVUIAIBP1UFrAEKAgEDTAtMYwIBRkcLR4EBAgFDUQtRagIBQFgLWGICAQRcCaMBFAIBC6YBCaoBEQIBB147XkICAQxgC3AvAgEycQuiARACAQ2oAQ2oAY4BAgEIaBFoaQIBO20RbXkCATdjEWN+AgEzdBF0cQIBDngPmQEaAgEXnAEPoAEXAgESekF6SAIBGHwRhwEuAgEniAERmAEWAgEZngETngGjAQIBE38Xf28CAS2EAReEAXACASiLAReLAWgCARqPARWPAXUCASWSARWWAR0CAR+PAWWPAXICASaUARmUAYQBAgEg</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="NotifyUserActivity_1" sap:VirtualizedContainerService.HintSize="958,22" />
+      <sap2010:ViewStateData Id="ChangeProductStatusActivity_1" sap:VirtualizedContainerService.HintSize="711,22" />
+      <sap2010:ViewStateData Id="IndexProductActivity_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="TerminateWorkflow_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Throw_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="464,210" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="486,396">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="711,546" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="733,732">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="958,882" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="980,1068">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Mendeo.Mercurius.Workflow.ProductStatusNotifyApprovalActivity_1" sap:VirtualizedContainerService.HintSize="1020,1148" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
