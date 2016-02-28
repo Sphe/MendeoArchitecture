@@ -34,6 +34,8 @@ namespace Mendeo.Mercurius.Model.FullDomain
 
         public int? UserId { get; set; }
 
+        public string Domicile { get; set; }
+
         public IList<RequestBucketComposite> Filters { get; set; }
 
         public bool IsDemand { get; set; }

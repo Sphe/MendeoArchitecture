@@ -65,6 +65,7 @@
         vm.distanceDefaultValue = 50;
 
         vm.queryParam = $routeParams.querySearch || null;
+        vm.domicile = $routeParams.domicile || null;
         vm.querySearch = null;
         vm.filterCategoryId = null;
 
@@ -476,6 +477,10 @@
 
             if (vm.querySearch) {
                 request.querySearch = vm.querySearch;
+            }
+
+            if (vm.domicile) {
+                request.domicile = vm.domicile;
             }
 
             if (vm.filterCategoryId) {
