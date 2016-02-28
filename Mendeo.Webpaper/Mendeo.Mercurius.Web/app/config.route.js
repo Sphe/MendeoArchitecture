@@ -88,7 +88,7 @@
             controller: 'CategoryListController',
             controllerAs: 'vm',
             caseInsensitiveMatch: true,
-            showNav: 'Parcourir les annonces',
+            showNav: 'Browse',
             resolve: {
                 deps: ['uiLoad', '$ocLazyLoad',
                     function (uiLoad, $ocLazyLoad) {
